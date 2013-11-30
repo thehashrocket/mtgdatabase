@@ -40,8 +40,3 @@ dwsync.xml
 /www/vendor
 composer.phar
 composer.lock
-
-Vagrantfile
-puppet/
-readme.md
-vagrant/
