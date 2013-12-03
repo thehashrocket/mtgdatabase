@@ -20,11 +20,23 @@ class HomeController extends BaseController {
      */
     protected $layout = 'layouts.master';
 
+    public function __construct() {
+
+        $this->curl = new anlutro\cURL\cURL;
+    }
+
 
 
 	public function getIndex()
 	{
-        $this->layout->content = View::make('hello');
+
+        $data = array();
+
+
+
+        $this->layout->with('data', $data);
+
+        $this->layout->content = View::make('hello', $data);
 	}
 
 }

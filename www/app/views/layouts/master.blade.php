@@ -47,7 +47,8 @@
 <div class="row">
     <div class="large-3 columns">
         @section('sidebar')
-        This is the master sidebar.
+
+        @include('widgets.sidebar_cards') 
         @show
     </div>
     <div class="large-9 columns">
@@ -57,7 +58,7 @@
 
 <div class="container">
     @if(Session::has('message'))
-    <p class="alert">{{ Session::get('message') }}</p>
+        <p class="alert">{{ Session::get('message') }}</p>
     @endif
 </div>
 

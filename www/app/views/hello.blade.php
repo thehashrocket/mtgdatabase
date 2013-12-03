@@ -3,8 +3,6 @@
 @section('sidebar')
 @parent
 
-    <p>Here's some radical sidebar content</p>
-
 @stop
 
 @section('content')

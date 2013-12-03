@@ -78,3 +78,17 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+/*
+|--------------------------------------------------------------------------
+| Pass Variables to Master Layout
+|--------------------------------------------------------------------------
+|asdfasdf
+|
+*/
+
+View::composer('widgets.sidebar_cards', function($view){
+    $menus = Card::getCardOfTheDay();
+
+    $view->with('card', $menus);
+});
