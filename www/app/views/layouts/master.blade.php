@@ -48,7 +48,7 @@
     <div class="large-3 columns">
         @section('sidebar')
 
-        @include('widgets.sidebar_cards') 
+        @include('widgets.sidebar_cards')
         @show
     </div>
     <div class="large-9 columns">

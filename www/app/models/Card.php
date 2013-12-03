@@ -20,6 +20,8 @@ class Card extends Eloquent {
 	{
         $curl = new anlutro\cURL\cURL;
 
+        $id = rand ( 1 , 365 );
+
         $url = $curl->buildUrl('http://mtgapi.com/api/v1/fetch/id/1', ['token' => '0821d5019178107cbc66331573280f7c1346550a']);
 
         $card = json_decode($curl->get($url));

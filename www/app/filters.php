@@ -88,7 +88,7 @@ Route::filter('csrf', function()
 */
 
 View::composer('widgets.sidebar_cards', function($view){
-    $menus = Card::getCardOfTheDay();
+    $card = Card::getCardOfTheDay();
 
-    $view->with('card', $menus);
+    $view->with('card', $card);
 });
