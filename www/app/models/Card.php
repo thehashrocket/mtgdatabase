@@ -11,18 +11,17 @@ class Card extends Eloquent {
     }
 
 
-	/**
-	 * Get the unique identifier for the user.
-	 *
-	 * @return mixed
-	 */
-	public static function getCardOfTheDay()
+    /**
+     * Generate random number,
+     * @return mixed
+     */
+    public static function getCardOfTheDay()
 	{
         $curl = new anlutro\cURL\cURL;
 
-        $id = rand ( 1 , 365 );
+        $id = rand ( 1 , 8872 );
 
-        $url = $curl->buildUrl('http://mtgapi.com/api/v1/fetch/id/1', ['token' => '0821d5019178107cbc66331573280f7c1346550a']);
+        $url = $curl->buildUrl('http://mtgapi.com/api/v1/fetch/id/' . $id, ['token' => '0821d5019178107cbc66331573280f7c1346550a']);
 
         $card = json_decode($curl->get($url));
 

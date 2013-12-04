@@ -32,8 +32,6 @@ class HomeController extends BaseController {
 
         $data = array();
 
-
-
         $this->layout->with('data', $data);
 
         $this->layout->content = View::make('hello', $data);
