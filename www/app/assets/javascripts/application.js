@@ -15,4 +15,5 @@
 //= require jquery
 
 //= require foundation
+//= require foundation.topbar
 //= require main

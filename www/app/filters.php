@@ -90,5 +90,9 @@ Route::filter('csrf', function()
 View::composer('widgets.sidebar_cards', function($view){
     $card = Card::getCardOfTheDay();
 
-    $view->with('card', $card);
+    if (isset($card->name)) {
+        $view->with('card', $card);
+    }
+
+
 });
