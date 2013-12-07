@@ -40,4 +40,4 @@ dwsync.xml
 /www/vendor
 composer.phar
 composer.lock
-bower-components
+bower_components
