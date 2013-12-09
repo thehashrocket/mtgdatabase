@@ -10,6 +10,19 @@ class Card extends Eloquent {
 
     }
 
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = 'card';
+
+
+    public function decks()
+    {
+        return $this->hasMany('Deck');
+    }
+
 
     /**
      * Generate random number,
