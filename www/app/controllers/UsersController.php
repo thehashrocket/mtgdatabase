@@ -17,7 +17,13 @@ class UsersController extends BaseController {
 
     public function getDashboard() {
 
-        $this->layout->content = View::make('users.dashboard');
+        $data = array();
+
+        $data->$id = Auth::user()->id;
+
+        $this->layout->with('data', $data);
+
+        $this->layout->content = View::make('users.dashboard', $data);
 
     }
 

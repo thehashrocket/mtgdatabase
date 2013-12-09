@@ -23,6 +23,10 @@ class Deck extends Eloquent {
         return $this->hasMany('Card');
     }
 
+    public function decks() {
+        $decks = DB::table('deck')->where('votes', '>', 100)->get();
+    }
+
 
 
 
