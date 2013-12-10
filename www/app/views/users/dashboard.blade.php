@@ -19,6 +19,7 @@
 <div class="row">
     <div class="large-4 columns">
         <h3>Your Decks</h3>
+        <?php var_dump($decks); ?>
     </div>
     <div class="large-8 columns">
         <h3>Your Cards</h3>
