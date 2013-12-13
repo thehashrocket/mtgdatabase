@@ -29,6 +29,20 @@ class UsersController extends BaseController {
 
     }
 
+    public function getDecks() {
+
+        $data = array();
+
+        $data['key'] = Auth::user()->key;
+
+        $data['decks'] = Deck::where('user_id', '=', Auth::user()->key);
+
+        $this->layout->with('data', $data);
+
+        $this->layout->content = View::make('users.decks', $data);
+
+    }
+
     public function getLogin() {
         $this->layout->content = View::make('users.login');
     }

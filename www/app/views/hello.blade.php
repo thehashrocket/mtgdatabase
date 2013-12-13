@@ -18,12 +18,13 @@
                 <div class="row">
                     <div class="large-4 medium-4 columns">
                         @if(!Auth::check())
-                            <p><a href="http://foundation.zurb.com/docs">Become A Member</a><br />Becoming a member is FREE! You get access your to cards anywhere you have Internet access.</p>
+                            <p><a href="/user/register">Become A Member</a><br />Becoming a member is FREE! You get access your to cards anywhere you have Internet access.</p>
 
                             <p>{{ HTML::link('users/register', 'Register') }} | {{ HTML::link('users/login', 'Login') }}</p>
 
+
                         @else
-                            <p><a href="http://foundation.zurb.com/docs">You're Already A Member!</a><br />Thank you for being a member. We appreciate you!</p>
+                            <p><a href="/users/dashboard">You're Already A Member!</a><br />Thank you for being a member. We appreciate you!</p>
 
                         @endif
 

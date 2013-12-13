@@ -11,9 +11,9 @@
 
 <div class="row">
     <div class="large-12 columns">
-        <h1>Dashboard</h1>
+        <h1>Your Decks</h1>
 
-        <p>Welcome to your Dashboard. You rock!</p>
+        <p>Create your Decks</p>
     </div>
 </div>
 <div class="row">
@@ -33,7 +33,11 @@
         <?php } ?>
         <div class="row">
             <div class="large-12 columns">
-                <a href="/users/decks">Manage Decks</a>
+                <h6>Create A Deck</h6>
+                {{ Form::open(array('url' => 'foo/bar')) }}
+                {{ Form::text('deckName', null, array('class'=>'input-block-level', 'placeholder'=>'My Awesome Deck')) }}
+                {{ Form::submit('Register', array('class'=>'btn btn-large btn-primary btn-block'))}}
+                {{ Form::close() }}
             </div>
         </div>
     </div>
