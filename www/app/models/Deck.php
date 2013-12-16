@@ -7,7 +7,6 @@ class Deck extends Eloquent {
 
     public function __construct() {
 
-
     }
 
     /**
@@ -16,6 +15,10 @@ class Deck extends Eloquent {
      * @var string
      */
     protected $table = 'deck';
+
+    public static $rules = array(
+        'deckName'=>'required|alpha|min:2'
+    );
 
 
     public function cards()
@@ -26,14 +29,5 @@ class Deck extends Eloquent {
     public function decks() {
         $decks = DB::table('deck')->where('votes', '>', 100)->get();
     }
-
-
-
-
-
-
-
-
-
 
 }

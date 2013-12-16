@@ -20,21 +20,22 @@
     <div class="large-4 columns">
         <h3>Your Decks</h3>
 
-        <?php if (isset($decks->id)) { ?>
 
-            @for ($i =0; $i < count($decks) - 1; $i++)
+        <?php if (isset($decks)) { ?>
+
+            <?php foreach ($decks as $deck) { ?>
                 <div class="row">
                     <div class="large-12 columns">
-                        Deck is {{$decks[$i]}}
+                        <p><?php echo $deck->name; ?> </p>
                     </div>
                 </div>
-            @endfor
+            <?php } ?>
 
         <?php } ?>
         <div class="row">
             <div class="large-12 columns">
                 <h6>Create A Deck</h6>
-                {{ Form::open(array('url' => 'foo/bar')) }}
+                {{ Form::open(array('url' => 'decks/create', 'class' => 'form-createdeck')) }}
                 {{ Form::text('deckName', null, array('class'=>'input-block-level', 'placeholder'=>'My Awesome Deck')) }}
                 {{ Form::submit('Register', array('class'=>'btn btn-large btn-primary btn-block'))}}
                 {{ Form::close() }}

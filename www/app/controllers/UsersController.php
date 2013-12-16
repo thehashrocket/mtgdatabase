@@ -33,9 +33,9 @@ class UsersController extends BaseController {
 
         $data = array();
 
-        $data['key'] = Auth::user()->key;
+        $data['key'] = Auth::user()->id;
 
-        $data['decks'] = Deck::where('user_id', '=', Auth::user()->key);
+        $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
 
         $this->layout->with('data', $data);
 

@@ -13,4 +13,6 @@
 
 Route::get('/', 'HomeController@getIndex');
 
-Route::controller('users', 'UsersController');;
+Route::controller('users', 'UsersController');
+
+Route::controller('decks', 'DecksController');
