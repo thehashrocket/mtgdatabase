@@ -16,3 +16,5 @@ Route::get('/', 'HomeController@getIndex');
 Route::controller('users', 'UsersController');
 
 Route::controller('decks', 'DecksController');
+
+Route::controller('cards', 'CardsController');

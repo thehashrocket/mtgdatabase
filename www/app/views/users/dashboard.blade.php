@@ -20,15 +20,15 @@
     <div class="large-4 columns">
         <h3>Your Decks</h3>
 
-        <?php if (isset($decks->id)) { ?>
+        <?php if (isset($decks)) { ?>
 
-            @for ($i =0; $i < count($decks) - 1; $i++)
+            <?php foreach ($decks as $deck) { ?>
                 <div class="row">
                     <div class="large-12 columns">
-                        Deck is {{$decks[$i]}}
+                        <p><a href="decks/<?php echo $deck->user_id;?>/<?php echo $deck->id; ?>"><?php echo $deck->name; ?></a> </p>
                     </div>
                 </div>
-            @endfor
+            <?php } ?>
 
         <?php } ?>
         <div class="row">
