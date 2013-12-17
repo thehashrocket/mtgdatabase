@@ -24,7 +24,6 @@ class DecksController extends BaseController {
         } else {
 
             $data['authorized'] = false;
-
             $data['decks'] = "";
         }
 
