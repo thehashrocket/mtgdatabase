@@ -11,9 +11,9 @@
 
 <div class="row">
     <div class="large-12 columns">
-        <h1>Your Decks</h1>
+        <h1>Manage Your Decks</h1>
 
-        <p>Create your Decks</p>
+        <p>Here you can manage your decks by adding and removing cards. You can also share this deck with others by using your unique url above.</p>
     </div>
 </div>
 <div class="row">
