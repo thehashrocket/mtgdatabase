@@ -25,7 +25,7 @@
             <?php foreach ($decks as $deck) { ?>
                 <div class="row">
                     <div class="large-12 columns">
-                        <p><a href="/decks/<?php echo $deck->user_id;?>/<?php echo $deck->id; ?>"><?php echo $deck->name; ?></a> </p>
+                        <p><a href="/decks/<?php echo $deck->id; ?>/<?php echo $deck->user_id;?>"><?php echo $deck->name; ?></a> </p>
                     </div>
                 </div>
             <?php } ?>
@@ -33,7 +33,7 @@
         <?php } ?>
         <div class="row">
             <div class="large-12 columns">
-                <a href="/users/decks">Manage Decks</a>
+                <a href="/decks/decks">Manage Decks</a>
             </div>
         </div>
     </div>
