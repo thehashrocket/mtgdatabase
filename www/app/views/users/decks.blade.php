@@ -20,8 +20,7 @@
     <div class="large-4 columns">
         <h3>Your Decks</h3>
 
-
-        <?php if (isset($decks)) { ?>
+        <?php if (isset($decks) && count($decks) >= 1) { ?>
 
             <?php foreach ($decks as $deck) { ?>
                 <div class="row">

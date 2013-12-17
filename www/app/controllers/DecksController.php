@@ -14,6 +14,28 @@ class DecksController extends BaseController {
 
     protected $layout = 'layouts.master';
 
+    public function getDecks($deck="" ,$user_id = "") {
+
+        $data = array();
+
+        if ($user_id == Auth::user()->id) {
+            $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
+            $data['authorized'] = true;
+        } else {
+
+            $data['authorized'] = false;
+
+            $data['decks'] = "";
+        }
+
+        $data['deck'] = Deck::where('id', '=', $deck)->get();
+
+        $this->layout->with('data', $data);
+
+        $this->layout->content = View::make('users.decks', $data);
+
+    }
+
     public function postCreate() {
         $validator = Validator::make(Input::all(), Deck::$rules);
 

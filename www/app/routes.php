@@ -15,6 +15,10 @@ Route::get('/', 'HomeController@getIndex');
 
 Route::controller('users', 'UsersController');
 
+Route::get( 'decks/{deck}', 'DecksController@getDecks' );
+
+Route::get( 'decks/{deck}/{user_id}', 'DecksController@getDecks' );
+
 Route::controller('decks', 'DecksController');
 
 Route::controller('cards', 'CardsController');
