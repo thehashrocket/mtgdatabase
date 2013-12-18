@@ -18,9 +18,12 @@ class DecksController extends BaseController {
 
         $data = array();
 
-        if ($user_id == Auth::user()->id) {
-            $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
-            $data['authorized'] = true;
+        if (isset(Auth::user()->id)) {
+            if ($user_id == Auth::user()->id) {
+                $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
+                $data['authorized'] = true;
+            }
+
         } else {
 
             $data['authorized'] = false;
