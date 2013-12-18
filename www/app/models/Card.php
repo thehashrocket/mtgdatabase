@@ -15,7 +15,7 @@ class Card extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'card';
+    protected $table = 'cards';
 
 
     public function decks()
@@ -30,35 +30,18 @@ class Card extends Eloquent {
      */
     public static function getCardOfTheDay()
 	{
+
         $curl = new anlutro\cURL\cURL;
 
-        $id = rand ( 1 , 8872 );
+        $id = rand ( 1 , 21303 );
 
-        $url = $curl->buildUrl('http://mtgapi.com/api/v1/fetch/id/' . $id, ['token' => '0821d5019178107cbc66331573280f7c1346550a']);
+        $card = DB::table('cards')->where('id', $id)->first();
 
-        $card = json_decode($curl->get($url));
+//        $url = $curl->buildUrl('http://mtgapi.com/api/v1/fetch/id/' . $id, ['token' => '0821d5019178107cbc66331573280f7c1346550a']);
+//
+//        $card = json_decode($curl->get($url));
 
 		return $card;
-	}
-
-	/**
-	 * Get the password for the user.
-	 *
-	 * @return string
-	 */
-	public function getAuthPassword()
-	{
-		return $this->password;
-	}
-
-	/**
-	 * Get the e-mail address where password reminders are sent.
-	 *
-	 * @return string
-	 */
-	public function getReminderEmail()
-	{
-		return $this->email;
 	}
 
 }

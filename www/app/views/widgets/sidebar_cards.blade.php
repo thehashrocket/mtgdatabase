@@ -15,7 +15,8 @@
     </div>
     <div class="row">
         <div class="large-12 columns">
-            <img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{ $card->id }}&type=card" />
+            <img src="{{ $card->card_image }}">
+<!--            <img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{ $card->card_id }}&type=card" />-->
         </div>
     </div>
 
