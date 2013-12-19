@@ -2,10 +2,6 @@
 
 class SearchController extends BaseController {
 
-    public function __construct() {
-        parent::__construct();
-    }
-
     public function doSearch( $card_id )
     {
 

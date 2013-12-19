@@ -22,3 +22,7 @@ Route::get( 'decks/{deck}/{user_id}', 'DecksController@getDecks' );
 Route::controller('decks', 'DecksController');
 
 Route::controller('cards', 'CardsController');
+
+Route::get( 'search/{id}', 'SearchController@doSearch' );
+
+Route::get( 'search','SearchController@showSearch' );
