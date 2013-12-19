@@ -28,10 +28,18 @@ $(function() {
         minLength: 2,
         select: function( event, ui ){
 
-            window.location = "/search/" + ui.item.id
+            $.ajax({
+                type: "GET",
+                url: "/search/" + ui.item.id
+            }).done(function(html_form) {
+                    $('#myModal').html(html_form);
+                    $('#myModal').foundation('reveal', 'open');
+//                    $('#myModal').show();
+                });
 
         },
         open: function(){
+
 //			$( this ).removeClass().addClass();
         },
         close: function() {

@@ -47,6 +47,7 @@
         </div>
     <?php } ?>
     <?php if ($authorized == true) { ?>
+        <div id="myModal" class="reveal-modal"></div>
         <div class="large-8 columns">
             <h3>Your Cards</h3>
             <div class="row">

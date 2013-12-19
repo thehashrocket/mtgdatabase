@@ -16,5 +16,6 @@
 
 //= require foundation
 //= require foundation.topbar
+//= require foundation.reveal
 //= require jquery-ui
 //= require main
