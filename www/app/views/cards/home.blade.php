@@ -86,7 +86,7 @@
 <div class="row">
     <div class="columns large=12">
         <div id="user_options" class="clearfix">
-            {{ Form::open( array( 'url' => '/card/add', 'method' => 'post' ) ) }}
+            {{ Form::open( array( 'url' => '/single/create', 'method' => 'post' ) ) }}
             {{ Form::hidden( 'card_id', $card_data->id ) }}
             How many: {{ Form::text( 'num_cards', '1', array( 'class' => 'numberbox' ) ) }} {{ Form::submit( 'Add This Card', array( 'class' => 'btn btn-default btn-sm' ) ) }}
             {{ Form::close() }}

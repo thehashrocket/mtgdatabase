@@ -26,3 +26,5 @@ Route::controller('cards', 'CardsController');
 Route::get( 'search/{id}', 'SearchController@doSearch' );
 
 Route::get( 'search','SearchController@showSearch' );
+
+Route::controller('single', 'SingleController');

@@ -17,11 +17,9 @@ class Card extends Eloquent {
      */
     protected $table = 'cards';
 
-
-    public function decks()
-    {
-        return $this->hasMany('Deck');
-    }
+    public static $rules = array(
+        'deckName'=>'required|alpha|min:2'
+    );
 
 
     /**

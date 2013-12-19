@@ -6,7 +6,7 @@
  * Time: 11:16 AM
  */
 
-class CardsController extends BaseController {
+class SingleController extends BaseController {
 
     public function __construct() {
         $this->beforeFilter('csrf', array('on'=>'post'));
@@ -15,7 +15,7 @@ class CardsController extends BaseController {
     protected $layout = 'layouts.master';
 
     public function postCreate() {
-        $validator = Validator::make(Input::all(), Card::$rules);
+        $validator = Validator::make(Input::all(), Single::$rules);
 
 
         if ($validator->passes()) {
@@ -33,10 +33,10 @@ class CardsController extends BaseController {
             $card->user_id = Auth::user()->id;
             $card->save();
 
-            return Redirect::to('users/decks')->with('message', 'New card added.');
+            return Redirect::to('decks')->with('message', 'New card added.');
         } else {
             // validation has failed, display error messages
-            return Redirect::to('users/decks')->with('message', 'The following errors occurred')->withErrors($validator)->withInput();
+            return Redirect::to('decks')->with('message', 'The following errors occurred')->withErrors($validator)->withInput();
         }
     }
 
