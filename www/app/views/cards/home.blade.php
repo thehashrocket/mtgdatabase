@@ -15,62 +15,98 @@
     <div class="columns large-8">
         <div id="card_data_wrapper" class="clearfix">
 
-            <div id="card_data" class="clearfix">
-
-                <div id="card_name">
+            <div class="row">
+                <div class="large-4 columns">
                     <div class="card_label">Card Name:</div>
+                </div>
+                <div class="large-8 columns">
                     <div class="card_text">{{ $card_data->name }}</div>
                 </div>
+            </div>
 
-                <div id="card_cost">
+            <div class="row">
+                <div class="large-4 columns">
                     <div class="card_label">Mana Cost:</div>
+                </div>
+                <div class="large-8 columns">
                     <div class="card_text">{{ $card_data->manacost }}</div>
                 </div>
+            </div>
 
-                <div id="card_converted_cost">
+            <div class="row">
+                <div class="large-4 columns">
                     <div class="card_label">Converted Mana Cost:</div>
+                </div>
+                <div class="large-8 columns">
                     <div class="card_text">{{ $card_data->converted_mana_cost }}</div>
                 </div>
+            </div>
 
-                <div id="card_types">
+            <div class="row">
+                <div class="large-4 columns">
                     <div class="card_label">Types:</div>
+                </div>
+                <div class="large-8 columns">
                     <div class="card_text">{{ $card_data->type }} &ndash; {{ $card_data->subtype }}</div>
                 </div>
+            </div>
 
-                <div id="card_text">
+            <div class="row">
+                <div class="large-4 columns">
                     <div class="card_label">Card Text:</div>
+                </div>
+                <div class="large-8 columns">
                     <div class="card_text">{{ $card_data->description }}</div>
                 </div>
+            </div>
 
-                <div id="card_pt">
+            <div class="row">
+                <div class="large-4 columns">
                     <div class="card_label">P/T:</div>
+                </div>
+                <div class="large-8 columns">
                     <div class="card_text">{{ $card_data->power }} / {{ $card_data->toughness }}</div>
                 </div>
+            </div>
 
-                <div id="card_expansion">
+            <div class="row">
+                <div class="large-4 columns">
                     <div class="card_label">Expansion:</div>
+                </div>
+                <div class="large-8 columns">
                     <div class="card_text">{{ $card_data->card_set_id }} {{ $card_data->card_set_name }}</div>
                 </div>
+            </div>
 
-                <div id="card_rarity">
+            <div class="row">
+                <div class="large-4 columns">
                     <div class="card_label">Rarity:</div>
+                </div>
+                <div class="large-8 columns">
                     <div class="card_text">{{ $card_data->rarity }}</div>
                 </div>
-                <?php
-                /*
-                            <div id="card_number">
-                                <div class="card_label">Card Number:</div>
-                                <div class="card_text">{{ $card_data->converted_mana_cost }}</div>
-                            </div>
-                */
-                ?>
+            </div>
 
-                <div id="card_artist">
+            <div class="row">
+                <div class="large-4 columns">
                     <div class="card_label">Artist:</div>
+                </div>
+                <div class="large-8 columns">
                     <div class="card_text">{{ $card_data->artist }}</div>
                 </div>
-
             </div>
+            <?php
+            /*
+                <div class="row">
+                    <div class="large-4 columns">
+                        <div class="card_label">Card Number:</div>
+                    </div>
+                    <div class="large-8 columns">
+                        <div class="card_text">{{ $card_data->converted_mana_cost }}</div>
+                    </div>
+                </div>
+            */
+            ?>
 
         </div>
     </div>
@@ -123,9 +159,6 @@
                 </div>
                 <div class="large-9 columns"></div>
             </div>
-
-
-
 
         </div>
         {{ Form::close() }}
