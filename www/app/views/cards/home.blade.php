@@ -85,12 +85,32 @@
 
 <div class="row">
     <div class="columns large=12">
+        {{ Form::open( array( 'url' => '/single/create','class'=>'form-addcard' ) ) }}
+        {{ Form::hidden( 'card_id', $card_data->id ) }}
         <div id="user_options" class="clearfix">
-            {{ Form::open( array( 'url' => '/single/create', 'method' => 'post' ) ) }}
-            {{ Form::hidden( 'card_id', $card_data->id ) }}
-            How many: {{ Form::text( 'num_cards', '1', array( 'class' => 'numberbox' ) ) }} {{ Form::submit( 'Add This Card', array( 'class' => 'btn btn-default btn-sm' ) ) }}
-            {{ Form::close() }}
+            <div class="row">
+                <div class="large-6 columns">
+                    <p>How many:</p>
+                </div>
+                <div class="large-6 columns">
+                    <p>{{ Form::text( 'num_cards', '1', array( 'class' => 'numberbox' ) ) }} {{ Form::submit( 'Add This Card', array( 'class' => 'btn btn-default btn-sm' ) ) }}
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-6 columns">
+                    <p>Condition:</p>
+                </div>
+                <div class="large-6 columns">
+
+                </div>
+            </div>
+
+
+
+
         </div>
+        {{ Form::close() }}
     </div>
 </div>
 

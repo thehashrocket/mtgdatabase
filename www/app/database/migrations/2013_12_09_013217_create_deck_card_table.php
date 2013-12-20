@@ -14,9 +14,9 @@ class CreateDeckCardTable extends Migration {
 	{
 		//
         Schema::create('deck_card', function(Blueprint $table) {
-            $table->increments('id');
-            $table->integer('card_id');
-            $table->integer('deck_id');
+            $table->bigIncrements('id');
+            $table->bigInteger('card_id');
+            $table->bigInteger('deck_id');
             $table->timestamps();
         });
 	}

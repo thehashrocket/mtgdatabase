@@ -15,7 +15,7 @@ class AddUserIdToCard extends Migration {
 		//
         Schema::table('card', function($table)
         {
-            $table->integer('user_id');
+            $table->bigInteger('user_id');
         });
 	}
 

@@ -18,8 +18,8 @@ class Single extends Eloquent {
     protected $table = 'singlecard';
 
     public static $rules = array(
-        'card_id'=>'required|alpha|min:1',
-        'num_cards'=>'required|alpha|min:1'
+        'card_id'=>'required|min:1',
+        'num_cards'=>'required|min:1'
     );
 
 

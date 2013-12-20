@@ -14,8 +14,9 @@ class CreateSinglecardTable extends Migration {
 	{
 		//
         Schema::create('singlecard', function(Blueprint $table) {
-            $table->increments('id');
-            $table->integer('card_id');
+            $table->bigIncrements('id');
+            $table->bigInteger('card_id');
+            $table->bigInteger('user_id');
             $table->integer('condition_id');
             $table->date('purchase_date')->nullable();
             $table->decimal('purchase_price', 19, 4)->nullable();

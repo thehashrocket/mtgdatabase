@@ -31,7 +31,7 @@ class CreateCardsTable extends Migration {
             $table->string('rarity', 255)->nullable();
             $table->string('artist', 255);
             $table->text('card_image');
-            $table->string('card_set_id', 255);
+            $table->bigInteger('card_set_id');
             $table->string('released_at', 255);
             $table->timestamps();
         });

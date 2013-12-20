@@ -14,9 +14,9 @@ class CreateCardSetTable extends Migration {
 	{
 		//
         Schema::create('card_set', function(Blueprint $table) {
-            $table->increments('id');
-            $table->integer('card_id');
-            $table->integer('set_id');
+            $table->bigIncrements('id');
+            $table->bigInteger('card_id');
+            $table->bigInteger('set_id');
             $table->timestamps();
         });
 	}

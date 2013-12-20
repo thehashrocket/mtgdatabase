@@ -17,26 +17,19 @@ class SingleController extends BaseController {
     public function postCreate() {
         $validator = Validator::make(Input::all(), Single::$rules);
 
-
         if ($validator->passes()) {
             // validation has passed, save user in DB
 
-
-            $url = Request::url();
-
-            var_dump($url);
-
-            exit;
-
-            $card = new Card;
-            $card->name = Input::get('card_id');
+            $card = new Single;
+            $card->card_id = Input::get('card_id');
             $card->user_id = Auth::user()->id;
+            $card->condition_id = '1';
             $card->save();
 
-            return Redirect::to('decks')->with('message', 'New card added.');
+            return Redirect::to('decks/1/1')->with('message', 'New card added.');
         } else {
             // validation has failed, display error messages
-            return Redirect::to('decks')->with('message', 'The following errors occurred')->withErrors($validator)->withInput();
+            return Redirect::to('decks/1/1')->with('message', 'The following errors occurred')->withErrors($validator)->withInput();
         }
     }
 
