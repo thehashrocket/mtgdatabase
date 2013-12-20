@@ -14,30 +14,6 @@ class CardsController extends BaseController {
 
     protected $layout = 'layouts.master';
 
-    public function postCreate() {
-        $validator = Validator::make(Input::all(), Card::$rules);
 
-
-        if ($validator->passes()) {
-            // validation has passed, save user in DB
-
-
-            $url = Request::url();
-
-            var_dump($url);
-
-            exit;
-
-            $card = new Card;
-            $card->name = Input::get('card_id');
-            $card->user_id = Auth::user()->id;
-            $card->save();
-
-            return Redirect::to('users/decks')->with('message', 'New card added.');
-        } else {
-            // validation has failed, display error messages
-            return Redirect::to('users/decks')->with('message', 'The following errors occurred')->withErrors($validator)->withInput();
-        }
-    }
 
 }

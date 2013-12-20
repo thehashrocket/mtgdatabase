@@ -23,7 +23,7 @@ class SingleController extends BaseController {
             $card = new Single;
             $card->card_id = Input::get('card_id');
             $card->user_id = Auth::user()->id;
-            $card->condition_id = '1';
+            $card->condition_id = Input::get('condition_id');
             $card->save();
 
             return Redirect::to('decks/1/1')->with('message', 'New card added.');

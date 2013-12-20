@@ -18,11 +18,14 @@ class SearchController extends BaseController {
         // echo count( $cardSetsQuery );
         // var_dump( $cardSetsQuery );
 
-//        $data = array();
+        $data = array();
+        $data['card_data'] = $cardQuery[0];
+        $data['condition'] = Condition::all();
+
 //
 //        $this->layout->content = View::make('users.dashboard', $data);
 
-        $this->layout->content = View::make( 'cards.home', array( 'card_data' => $cardQuery[0] ) );
+        $this->layout->content = View::make( 'cards.home', $data );
 
     }
 

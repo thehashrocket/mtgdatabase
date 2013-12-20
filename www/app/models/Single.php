@@ -19,7 +19,8 @@ class Single extends Eloquent {
 
     public static $rules = array(
         'card_id'=>'required|min:1',
-        'num_cards'=>'required|min:1'
+        'num_cards'=>'required|min:1',
+        'condition_id' =>'required|min:1'
     );
 
 

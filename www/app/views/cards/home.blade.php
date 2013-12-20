@@ -87,23 +87,41 @@
     <div class="columns large=12">
         {{ Form::open( array( 'url' => '/single/create','class'=>'form-addcard' ) ) }}
         {{ Form::hidden( 'card_id', $card_data->id ) }}
+
         <div id="user_options" class="clearfix">
             <div class="row">
-                <div class="large-6 columns">
+                <div class="large-3 columns">
                     <p>How many:</p>
                 </div>
-                <div class="large-6 columns">
-                    <p>{{ Form::text( 'num_cards', '1', array( 'class' => 'numberbox' ) ) }} {{ Form::submit( 'Add This Card', array( 'class' => 'btn btn-default btn-sm' ) ) }}
+                <div class="large-3 columns">
+                    <p>{{ Form::text( 'num_cards', '1', array( 'class' => 'numberbox' ) ) }}
                     </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-6 columns">
-                    <p>Condition:</p>
                 </div>
                 <div class="large-6 columns">
 
                 </div>
+            </div>
+            <div class="row">
+                <div class="large-3 columns">
+                    <p>Condition:</p>
+                </div>
+                <div class="large-3 columns">
+
+                    <select name="condition_id">
+                        @foreach ($condition as $con)
+                        <option value="{{ $con->id }}">{{ $con->description }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="large-6 columns">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-3 columns">
+                    {{ Form::submit( 'Add This Card', array( 'class' => 'btn btn-default btn-sm' ) ) }}
+                </div>
+                <div class="large-9 columns"></div>
             </div>
 
 
