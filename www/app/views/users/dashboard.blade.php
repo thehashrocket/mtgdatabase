@@ -33,7 +33,7 @@
         <?php } ?>
         <div class="row">
             <div class="large-12 columns">
-                <a href="/decks/decks">Manage Decks</a>
+                <a href="/users/decks">Manage Decks</a>
             </div>
         </div>
     </div>

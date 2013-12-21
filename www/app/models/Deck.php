@@ -17,7 +17,7 @@ class Deck extends Eloquent {
     protected $table = 'deck';
 
     public static $rules = array(
-        'deckName'=>'required|alpha|min:2'
+        'deckName'=>'required|min:2'
     );
 
 

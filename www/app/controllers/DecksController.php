@@ -14,7 +14,7 @@ class DecksController extends BaseController {
 
     protected $layout = 'layouts.master';
 
-    public function getDecks($deck="" ,$user_id = "") {
+    public function getDecks($deck="", $user_id = "") {
 
         $data = array();
 
@@ -42,7 +42,6 @@ class DecksController extends BaseController {
 
     public function postCreate() {
         $validator = Validator::make(Input::all(), Deck::$rules);
-
 
         if ($validator->passes()) {
             // validation has passed, save user in DB
