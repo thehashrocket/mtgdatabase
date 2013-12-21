@@ -123,7 +123,7 @@
     <div class="columns large=12">
         {{ Form::open( array( 'url' => '/single/create','class'=>'form-addcard' ) ) }}
         {{ Form::hidden( 'card_id', $card_data->id ) }}
-
+        <?php echo Request::segment(1); ?>
         <div id="user_options" class="clearfix">
             <div class="row">
                 <div class="large-3 columns">
@@ -146,6 +146,23 @@
                     <select name="condition_id">
                         @foreach ($condition as $con)
                         <option value="{{ $con->id }}">{{ $con->description }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="large-6 columns">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-3 columns">
+                    <p>Add To Deck:</p>
+                </div>
+                <div class="large-3 columns">
+
+                    <select name="deck_id">
+                        <option value="">None</option>
+                        @foreach ($decks as $deck)
+                        <option value="{{ $deck->id }}">{{ $deck->name }}</option>
                         @endforeach
                     </select>
                 </div>

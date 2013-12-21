@@ -32,6 +32,8 @@ class DecksController extends BaseController {
 
         $data['deck'] = Deck::where('id', '=', $deck)->get();
 
+//        $data['cards'] = Single::where('id', '=', $deck)->get();
+
         $this->layout->with('data', $data);
 
         $this->layout->content = View::make('users.decks', $data);

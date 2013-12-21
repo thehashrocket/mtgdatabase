@@ -26,7 +26,22 @@ class SingleController extends BaseController {
             $card->condition_id = Input::get('condition_id');
             $card->save();
 
-            return Redirect::to('decks/1/1')->with('message', 'New card added.');
+        if (Input::get('deck_id') != '') {
+
+            $set = new DeckCard;
+            $set->card_id = Input::get('card_id');
+            $set->deck_id = Input::get('deck_id');
+            $set->save();
+
+            $userid = Auth::user()->id;
+
+            $deckid = Input::get('deck_id');
+
+//            return Redirect::to('decks/$deckid/$userid')->with('message', 'New card added.');
+            return Redirect::route('decks', array($deckid, $userid))->with('message', 'New card added.');
+        }
+
+            return Redirect::to('decks/users/dashboard')->with('message', 'New card added.');
         } else {
             // validation has failed, display error messages
             return Redirect::to('decks/1/1')->with('message', 'The following errors occurred')->withErrors($validator)->withInput();

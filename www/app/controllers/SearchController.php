@@ -21,6 +21,7 @@ class SearchController extends BaseController {
         $data = array();
         $data['card_data'] = $cardQuery[0];
         $data['condition'] = Condition::all();
+        $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
 
 //
 //        $this->layout->content = View::make('users.dashboard', $data);

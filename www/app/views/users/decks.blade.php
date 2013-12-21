@@ -49,13 +49,23 @@
     <?php if ($authorized == true) { ?>
         <div id="myModal" class="reveal-modal"></div>
         <div class="large-8 columns">
-            <h3>Your Cards</h3>
+           <div class="row">
+               <div class="large-12 column">
+                   <h3>Your Cards</h3>
+                   <div class="row">
+                       <div class="large-12 columns">
+                           <p>Add Cards to Deck</p>
+                           {{ Form::text( 'search', '', array( 'id' => 'search', 'class' => 'search-query span2', 'placeholder' => 'Search Database' ) ) }}
+                       </div>
+                   </div>
+               </div>
+           </div>
             <div class="row">
                 <div class="large-12 columns">
-                    <p>Add Cards to Deck</p>
-                    {{ Form::text( 'search', '', array( 'id' => 'search', 'class' => 'search-query span2', 'placeholder' => 'Search Database' ) ) }}
+                    <h3>Cards In This Deck</h3>
                 </div>
             </div>
+
         </div>
 
     <?php } else { ?>
