@@ -123,7 +123,7 @@
     <div class="columns large=12">
         {{ Form::open( array( 'url' => '/single/create','class'=>'form-addcard' ) ) }}
         {{ Form::hidden( 'card_id', $card_data->id ) }}
-        <?php echo Request::segment(1); ?>
+
         <div id="user_options" class="clearfix">
             <div class="row">
                 <div class="large-3 columns">

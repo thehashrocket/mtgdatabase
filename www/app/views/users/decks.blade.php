@@ -13,15 +13,13 @@
         <div class="large-12 columns">
             <h1>Manage Your Decks</h1>
 
-            <?php
-                $data = Session::all();
-
-                var_dump($data);
-            ?>
-
             <p>Here you can manage your decks by adding and removing cards. You can also share this deck with others by using your unique url above.</p>
         </div>
     </div>
+<?php } ?>
+<?php if ($authorized == true) {
+    ?>
+<div id="addCard" class=""></div>
 <?php } ?>
 <div class="row">
     <?php if ($authorized == true) { ?>
@@ -53,8 +51,9 @@
         </div>
     <?php } ?>
     <?php if ($authorized == true) { ?>
-        <div id="myModal" class="reveal-modal"></div>
+
         <div class="large-8 columns">
+
            <div class="row">
                <div class="large-12 column">
                    <h3>Your Cards</h3>

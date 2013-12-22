@@ -32,8 +32,8 @@ $(function() {
                 type: "GET",
                 url: "/search/" + ui.item.id
             }).done(function(html_form) {
-                    $('#myModal').html(html_form);
-                    $('#myModal').foundation('reveal', 'open');
+                    $('#addCard').html(html_form);
+                    $('#addCard').css('display', 'block');
 //                    $('#myModal').show();
                 });
 

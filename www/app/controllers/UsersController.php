@@ -37,6 +37,8 @@ class UsersController extends BaseController {
 
         } else {
 
+            $data['deckid'] = Session::get('deckid');
+
             $data['authorized'] = false;
             $data['decks'] = "";
         }
