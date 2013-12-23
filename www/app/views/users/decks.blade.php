@@ -17,10 +17,7 @@
         </div>
     </div>
 <?php } ?>
-<?php if ($authorized == true) {
-    ?>
-<div id="addCard" class=""></div>
-<?php } ?>
+
 <div class="row">
     <?php if ($authorized == true) { ?>
         <div class="large-4 columns">
@@ -61,6 +58,15 @@
                        <div class="large-12 columns">
                            <p>Add Cards to Deck</p>
                            {{ Form::text( 'search', '', array( 'id' => 'search', 'class' => 'search-query span2', 'placeholder' => 'Search Database' ) ) }}
+                       </div>
+                   </div>
+                   <div class="row">
+                       <div class="large-12 columns">
+                           <?php if ($authorized == true) {
+                               ?>
+                               <div id="addCard" class=""></div>
+                           <?php } ?>
+                           <div id="results"></div>
                        </div>
                    </div>
                </div>

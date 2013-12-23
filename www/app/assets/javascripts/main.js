@@ -39,6 +39,7 @@ $(function() {
 
         },
         open: function(){
+            $('ul.ui-autocomplete').removeAttr('style').hide().appendTo('#results').show();
 
 //			$( this ).removeClass().addClass();
         },
