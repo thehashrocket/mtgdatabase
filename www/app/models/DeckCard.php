@@ -15,7 +15,7 @@ class DeckCard extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'deck_card';
+    protected $table = 'deck_singlecard';
 
     public static $rules = array(
 

@@ -15,7 +15,7 @@ class Single extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'singlecard';
+    protected $table = 'singlecards';
 
     public static $rules = array(
         'card_id'=>'required|min:1',
@@ -24,9 +24,11 @@ class Single extends Eloquent {
     );
 
 
+
+
     public function decks()
     {
-        return $this->hasMany('Deck');
+        return $this->belongsToMany('Deck');
     }
 
 }

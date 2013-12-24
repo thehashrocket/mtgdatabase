@@ -14,20 +14,15 @@ class Deck extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'deck';
+    protected $table = 'decks';
 
     public static $rules = array(
         'deckName'=>'required|min:2'
     );
 
-
     public function cards()
     {
-        return $this->hasMany('Card');
-    }
-
-    public function decks() {
-        $decks = DB::table('deck')->where('votes', '>', 100)->get();
+        return $this->belongsToMany('Single', 'deck_card', 'card_id', 'deck_id');
     }
 
 }

@@ -13,8 +13,8 @@ class CreateDeckTable extends Migration {
 	public function up()
 	{
 		//
-        Schema::create('deck', function(Blueprint $table) {
-            $table->increments('id');
+        Schema::create('decks', function(Blueprint $table) {
+            $table->bigIncrements('id');
             $table->string('name', 100);
             $table->integer('user_id');
             $table->timestamps();
@@ -29,7 +29,7 @@ class CreateDeckTable extends Migration {
 	public function down()
 	{
 		//
-        Schema::drop('deck');
+        Schema::drop('decks');
 	}
 
 }

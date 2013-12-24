@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.0.*",
         "codesleeve/asset-pipeline": "dev-master",
-        "anlutro/curl": "dev-master"
+        "anlutro/curl": "dev-master",
+        "way/generators": "1.0.*@dev"
 	},
 	"autoload": {
 		"classmap": [

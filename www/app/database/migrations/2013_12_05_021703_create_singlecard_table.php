@@ -13,7 +13,7 @@ class CreateSinglecardTable extends Migration {
 	public function up()
 	{
 		//
-        Schema::create('singlecard', function(Blueprint $table) {
+        Schema::create('singlecards', function(Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('card_id');
             $table->bigInteger('user_id');
@@ -36,7 +36,7 @@ class CreateSinglecardTable extends Migration {
 	public function down()
 	{
 		//
-        Schema::drop('singlecard');
+        Schema::drop('singlecards');
 	}
 
 }

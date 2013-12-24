@@ -114,7 +114,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Codesleeve\AssetPipeline\AssetPipelineServiceProvider',
-        'anlutro\cURL\Laravel\cURLServiceProvider'
+        'anlutro\cURL\Laravel\cURLServiceProvider',
+        'Way\Generators\GeneratorsServiceProvider'
 	),
 
 	/*

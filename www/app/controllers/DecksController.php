@@ -30,6 +30,8 @@ class DecksController extends BaseController {
             $data['decks'] = "";
         }
 
+
+
         $data['deck'] = Deck::where('id', '=', $deck)->get();
 
 //        $data['cards'] = Single::where('id', '=', $deck)->get();

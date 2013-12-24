@@ -26,10 +26,12 @@ class SingleController extends BaseController {
             $card->condition_id = Input::get('condition_id');
             $card->save();
 
+            $id = $card->id;
+
         if (Input::get('deck_id') != '') {
 
             $set = new DeckCard;
-            $set->card_id = Input::get('card_id');
+            $set->singlecard_id = $id;
             $set->deck_id = Input::get('deck_id');
             $set->save();
 
@@ -44,7 +46,7 @@ class SingleController extends BaseController {
 
         }
 
-            return Redirect::with(back)->with('message', 'New card added.');
+            return Redirect::back()->with('message', 'New card added.');
         } else {
             // validation has failed, display error messages
             return Redirect::back()->with('message', 'The following errors occurred')->withErrors($validator)->withInput();
