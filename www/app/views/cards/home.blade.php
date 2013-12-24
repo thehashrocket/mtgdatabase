@@ -122,7 +122,7 @@
 <div class="row">
     <div class="columns large=12">
         {{ Form::open( array( 'url' => '/single/create','class'=>'form-addcard' ) ) }}
-        {{ Form::hidden( 'card_id', $card_data->id ) }}
+        {{ Form::hidden( 'card_id', $card_data->card_id ) }}
 
         <div id="user_options" class="clearfix">
             <div class="row">

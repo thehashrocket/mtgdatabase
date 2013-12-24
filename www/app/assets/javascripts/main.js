@@ -48,6 +48,26 @@ $(function() {
         }
     });
 
+    $('a.singlecard').hover(function(e) {
+        e.preventDefault();
+        console.log($(this).attr('href'));
+
+
+        item = $(this).attr('href');
+
+
+
+        $.ajax({
+            type: "GET",
+            url: "/search/" + item
+        }).done(function(html_form) {
+                $('#addCard').html(html_form);
+                $('#addCard').css('display', 'block');
+//                    $('#myModal').show();
+            });
+
+    })
+
 
     $(document).foundation();
 });

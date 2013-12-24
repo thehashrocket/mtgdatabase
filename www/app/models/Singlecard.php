@@ -3,7 +3,7 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Single extends Eloquent {
+class Singlecard extends Eloquent {
 
     public function __construct() {
 

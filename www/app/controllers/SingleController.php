@@ -15,12 +15,12 @@ class SingleController extends BaseController {
     protected $layout = 'layouts.master';
 
     public function postCreate() {
-        $validator = Validator::make(Input::all(), Single::$rules);
+        $validator = Validator::make(Input::all(), Singlecard::$rules);
 
         if ($validator->passes()) {
             // validation has passed, save user in DB
 
-            $card = new Single;
+            $card = new Singlecard;
             $card->card_id = Input::get('card_id');
             $card->user_id = Auth::user()->id;
             $card->condition_id = Input::get('condition_id');

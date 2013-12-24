@@ -76,11 +76,27 @@
                     <h3>Cards In This Deck</h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="large=12 columns">
 
-                </div>
-            </div>
+            <?php if ($cards != 0) { ?>
+            @foreach ($cards as $card)
+
+                @foreach ($card as $single)
+
+                    <div class="row">
+
+                        <div class="large=12 columns">
+
+                            <div><a class="singlecard" href="{{ $single->id }}">{{ $single->name }}</a></div>
+
+                        </div>
+
+                    </div>
+
+                @endforeach
+
+            @endforeach
+
+            <?php } ?>
 
         </div>
 
