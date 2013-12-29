@@ -64,7 +64,9 @@
                        <div class="large-12 columns">
                            <?php if ($authorized == true) {
                                ?>
-                               <div id="addCard" class=""></div>
+                               <div id="addCard" class="">
+
+                               </div>
                            <?php } ?>
                            <div id="results"></div>
                        </div>
@@ -77,26 +79,31 @@
                 </div>
             </div>
 
-            <?php if ($cards != 0) { ?>
-            @foreach ($cards as $card)
+            <div id="cardsList">
+                <?php if ($cards != 0) { ?>
+                    @foreach ($cards as $card)
 
-                @foreach ($card as $single)
+                    @foreach ($card as $single)
 
-                    <div class="row">
+                    <div class="row singlecard"><a class="" href="{{ $single->id }}">
+                            <div class="large-2 columns">
+                                <img src="{{ $single->card_image }}">
+                            </div>
 
-                        <div class="large=12 columns">
+                            <div class="large-10 columns">
 
-                            <div><a class="singlecard" href="{{ $single->id }}">{{ $single->name }}</a></div>
+                                <p>{{ $single->name }}</p>
 
-                        </div>
-
+                            </div>
+                        </a>
                     </div>
 
-                @endforeach
+                    @endforeach
 
-            @endforeach
+                    @endforeach
 
-            <?php } ?>
+                <?php } ?>
+            </div>
 
         </div>
 

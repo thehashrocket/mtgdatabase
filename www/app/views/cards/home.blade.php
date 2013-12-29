@@ -1,13 +1,13 @@
 @section( 'title' )
 @if( empty( $card_data ) )
-<h4>Your Cards</h4>
+<p>Nothing to see here.</p>
 @endif
 @show
 
 @section('content')
 
 @if( ! empty( $card_data ) )
-
+<div class="row"><div class="columns large-9"></div><div class="columns large-3"><a href="#" class="button tiny close">Close</a> </div> </div>
 <div class="row">
     <div class="columns large-4">
         <div id="card_image" class="clearfix"><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{ $card_data->card_id }}&type=card" /></div>
@@ -155,6 +155,21 @@
             </div>
             <div class="row">
                 <div class="large-3 columns">
+                    <p>Attributes:</p>
+                </div>
+                <div class="large-3 columns">
+
+                        @foreach ($attributes as $check)
+                        <input name="attributes[]" value="{{ $check->id }}" type="checkbox"><label for="attributes">{{ $check->alias }}</label><br/>
+                        @endforeach
+
+                </div>
+                <div class="large-6 columns">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-3 columns">
                     <p>Add To Deck:</p>
                 </div>
                 <div class="large-3 columns">
@@ -172,7 +187,7 @@
             </div>
             <div class="row">
                 <div class="large-3 columns">
-                    {{ Form::submit( 'Add This Card', array( 'class' => 'btn btn-default btn-sm' ) ) }}
+                    {{ Form::submit( 'Add This Card', array( 'class' => 'button tiny' ) ) }}
                 </div>
                 <div class="large-9 columns"></div>
             </div>

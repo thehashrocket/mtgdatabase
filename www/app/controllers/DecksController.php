@@ -32,21 +32,6 @@ class DecksController extends BaseController {
 
         $deck = Deck::find($deck);
 
-
-
-
-
-//        foreach($deck->cards as $card) {
-//            $data['cards'] = DB::table('singlecards')
-//                ->where('singlecards.id', $card->id)
-//                ->leftJoin('cards', 'singlecards.card_id', '=', 'cards.card_id')
-//                ->get();
-//        }
-//
-//        var_dump($data['cards']);
-//
-//        exit;
-
         foreach($deck->cards as $card) {
             $cards[] = DB::table('singlecards')
                 ->where('singlecards.id', $card->id)

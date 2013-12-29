@@ -48,24 +48,32 @@ $(function() {
         }
     });
 
-    $('a.singlecard').hover(function(e) {
+    $('#cardsList').on('click','.singlecard a', function(e) {
         e.preventDefault();
-        console.log($(this).attr('href'));
-
-
         item = $(this).attr('href');
-
+        var link = $(this);
 
 
         $.ajax({
             type: "GET",
             url: "/search/" + item
         }).done(function(html_form) {
-                $('#addCard').html(html_form);
-                $('#addCard').css('display', 'block');
-//                    $('#myModal').show();
-            });
 
+
+
+                if(('#cardsList > #addCard').length > 0) {
+                    $('#addCard').css('display', 'none');
+                }
+
+                $(link).parent('.singlecard').before($('#addCard').html(html_form).css('display', 'block'));
+
+            });
+    })
+
+    $('#addCard').on('click','a.close', function(e){
+        e.preventDefault();
+
+        $('#addCard').css('display','none');
     })
 
 

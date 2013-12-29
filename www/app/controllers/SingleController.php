@@ -28,6 +28,21 @@ class SingleController extends BaseController {
 
             $id = $card->id;
 
+            $checkboxes = Input::get('attributes');
+
+            if(is_array($checkboxes))
+            {
+                foreach($checkboxes as $check) {
+
+                    $attr = new AttributeCard;
+                    $attr->singlecard_id = $id;
+                    $attr->attribute_id = $check;
+                    $attr->save();
+
+                }
+                // do stuff with checked friends
+            }
+
         if (Input::get('deck_id') != '') {
 
             $set = new DeckCard;
@@ -40,9 +55,6 @@ class SingleController extends BaseController {
             $deckid = Input::get('deck_id');
 
             return Redirect::back()->with(array('deckid' => $deckid, 'userid' => $userid, 'message' => 'New card added.'));
-
-//            return Redirect::to('/users/decks')->with(array('deckid' => $deckid, 'userid' => $userid, 'message' => 'New card added.'));
-
 
         }
 
