@@ -14,25 +14,47 @@ class DecksController extends BaseController {
 
     protected $layout = 'layouts.master';
 
-    public function getDecks($deck="", $user_id = "") {
+    public function getDecks($deck="") {
 
         $data = array();
 
-        if (isset(Auth::user()->id)) {
-            if ($user_id == Auth::user()->id) {
+        /* A deck id was passed */
+        if (isset($deck) && strlen($deck) > 0) {
+
+            /* Get deck info */
+            $reqdeck =  Deck::find($deck);
+
+
+
+            /* is the visitor logged in? */
+            if (isset(Auth::user()->id)) {
+
                 $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
-                $data['authorized'] = true;
+
+                /* Does the visitor have permission to edit this deck */
+                if ($reqdeck->user_id == Auth::user()->id) {
+                    $data['authorized'] = true;
+                } else {
+                    $data['authorized'] = false;
+                }
+            } else {
+                $data['authorized'] = false;
             }
 
         } else {
+            if (isset(Auth::user()->id)) {
+                $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
+            } else {
+                echo 'hello';
+                exit;
+            }
 
-            $data['authorized'] = false;
-            $data['decks'] = "";
         }
 
         $deck = Deck::find($deck);
 
         foreach($deck->cards as $card) {
+
             $cards[] = DB::table('singlecards')
                 ->where('singlecards.id', $card->id)
                 ->leftJoin('cards', 'singlecards.card_id', '=', 'cards.card_id')
@@ -41,6 +63,7 @@ class DecksController extends BaseController {
 
         if (isset($cards) && count($cards) > 0) {
             $data['cards'] = $cards;
+
         } else {
             $data['cards'] = 0;
         }
