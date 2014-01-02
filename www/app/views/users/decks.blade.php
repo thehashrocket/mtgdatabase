@@ -111,6 +111,31 @@
         <div class="large-12 columns">
             <h3>Player Names Cards</h3>
         </div>
+        <div id="cardsList">
+            <?php if (isset($cards) && $cards != 0) { ?>
+                @foreach ($cards as $card)
+
+                @foreach ($card as $single)
+
+                <div class="row"><a class="" href="/cards/single/{{ $single->id }}">
+                        <div class="large-2 columns">
+                            <img src="{{ $single->card_image }}">
+                        </div>
+
+                        <div class="large-10 columns">
+
+                            <p>{{ $single->name }}</p>
+
+                        </div>
+                    </a>
+                </div>
+
+                @endforeach
+
+                @endforeach
+
+            <?php } ?>
+        </div>
     <?php } ?>
 
 

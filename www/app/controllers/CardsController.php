@@ -14,6 +14,11 @@ class CardsController extends BaseController {
 
     protected $layout = 'layouts.master';
 
+    public function getSingle($card="") {
+        var_dump($card);
+        exit;
+    }
+
 
 
 }
