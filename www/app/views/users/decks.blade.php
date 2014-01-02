@@ -109,7 +109,8 @@
 
     <?php } else { ?>
         <div class="large-12 columns">
-            <h3>Player Names Cards</h3>
+
+            <h3>{{ $owner->firstname }}'s {{ $deck->name }} Deck</h3>
         </div>
         <div id="cardsList">
             <?php if (isset($cards) && $cards != 0) { ?>

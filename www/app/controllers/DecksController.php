@@ -35,9 +35,13 @@ class DecksController extends BaseController {
                 if ($reqdeck->user_id == Auth::user()->id) {
                     $data['authorized'] = true;
                 } else {
+                    $data['deck'] = Deck::find($deck);
+                    $data['owner'] = User::find($reqdeck->user_id);
                     $data['authorized'] = false;
                 }
             } else {
+                $data['deck'] = Deck::find($deck);
+                $data['owner'] = User::find($reqdeck->user_id);
                 $data['authorized'] = false;
             }
 
@@ -67,11 +71,6 @@ class DecksController extends BaseController {
         } else {
             $data['cards'] = 0;
         }
-
-
-
-
-
 
         $this->layout->with('data', $data);
 
