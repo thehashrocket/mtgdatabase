@@ -118,14 +118,19 @@
 
                 @foreach ($card as $single)
 
-                <div class="row"><a class="" href="/cards/single/{{ $single->id }}">
+                <div class="row singlecard"><a class="" href="{{ $single->id }}">
                         <div class="large-2 columns">
                             <img src="{{ $single->card_image }}">
                         </div>
 
                         <div class="large-10 columns">
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <p>{{ $single->name }}</p>
+                                </div>
+                            </div>
 
-                            <p>{{ $single->name }}</p>
+
 
                         </div>
                     </a>
@@ -136,6 +141,9 @@
                 @endforeach
 
             <?php } ?>
+        </div>
+        <div id="addCard" class="">
+
         </div>
     <?php } ?>
 

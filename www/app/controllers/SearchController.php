@@ -15,17 +15,17 @@ class SearchController extends BaseController {
 
         $cardSetsQuery = DB::table( 'cards' )->where( 'name', '=', $cardQuery[0]->name )->get();
 
-        // echo count( $cardSetsQuery );
-        // var_dump( $cardSetsQuery );
-
         $data = array();
         $data['card_data'] = $cardQuery[0];
         $data['condition'] = Condition::all();
-        $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
-        $data['attributes'] = Attribute::all();
 
-//
-//        $this->layout->content = View::make('users.dashboard', $data);
+        if (isset(Auth::user()->id)) {
+            $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
+        } else {
+
+        }
+
+        $data['attributes'] = Attribute::all();
 
         $this->layout->content = View::make( 'cards.home', $data );
 

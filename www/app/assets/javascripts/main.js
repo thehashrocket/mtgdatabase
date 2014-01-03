@@ -59,13 +59,11 @@ $(function() {
             url: "/search/" + item
         }).done(function(html_form) {
 
+            if(('#cardsList > #addCard').length > 0) {
+                $('#addCard').css('display', 'none');
+            }
 
-
-                if(('#cardsList > #addCard').length > 0) {
-                    $('#addCard').css('display', 'none');
-                }
-
-                $(link).parent('.singlecard').before($('#addCard').html(html_form).css('display', 'block'));
+            $(link).parent('.singlecard').before($('#addCard').html(html_form).css('display', 'block'));
 
             });
     })
