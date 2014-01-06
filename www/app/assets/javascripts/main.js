@@ -47,7 +47,7 @@ $(function() {
 //			$( this ).removeClass().addClass();
         }
     });
-
+    $('a.close-reveal-modal').trigger('click');
     $('#cardsList').on('click','.singlecard a', function(e) {
         e.preventDefault();
         item = $(this).attr('href');
@@ -62,8 +62,15 @@ $(function() {
             if(('#cardsList > #addCard').length > 0) {
                 $('#addCard').css('display', 'none');
             }
+                if($('#cardsList').hasClass('ul1')) {
+                    $(link).parent('.singlecard').before($('#addCard').html(html_form).css('display', 'block'));
+                } else {
+                    console.log('hello');
+                    $('#addCard').html(html_form);
+                    $('#addCard').foundation('reveal', 'open');
+                }
 
-            $(link).parent('.singlecard').before($('#addCard').html(html_form).css('display', 'block'));
+
 
             });
     })

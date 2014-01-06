@@ -79,7 +79,7 @@
                 </div>
             </div>
 
-            <div id="cardsList">
+            <div id="cardsList" class="ul1">
                 <?php if (isset($cards) && $cards != 0) { ?>
                     @foreach ($cards as $card)
 
@@ -112,7 +112,7 @@
 
             <h3>{{ $owner->firstname }}'s {{ $deck->name }} Deck</h3>
         </div>
-        <div id="cardsList">
+        <div id="cardsList" class="ul2">
             <?php if (isset($cards) && $cards != 0) { ?>
                 @foreach ($cards as $card)
 
@@ -130,8 +130,6 @@
                                 </div>
                             </div>
 
-
-
                         </div>
                     </a>
                 </div>
@@ -142,7 +140,7 @@
 
             <?php } ?>
         </div>
-        <div id="addCard" class="">
+        <div id="addCard" class="reveal-modal" data-reveal>
 
         </div>
     <?php } ?>

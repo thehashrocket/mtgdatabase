@@ -20,35 +20,50 @@ class SingleController extends BaseController {
         if ($validator->passes()) {
             // validation has passed, save user in DB
 
-            $card = new Singlecard;
-            $card->card_id = Input::get('card_id');
-            $card->user_id = Auth::user()->id;
-            $card->condition_id = Input::get('condition_id');
-            $card->save();
+            $num_cards = Input::get('num_cards');
 
-            $id = $card->id;
+            $x = 1;
 
-            $checkboxes = Input::get('attributes');
+            while ($x <= $num_cards) {
 
-            if(is_array($checkboxes))
-            {
-                foreach($checkboxes as $check) {
+                $card = new Singlecard;
+                $card->card_id = Input::get('card_id');
+                $card->user_id = Auth::user()->id;
+                $card->condition_id = Input::get('condition_id');
+                $card->save();
 
-                    $attr = new AttributeCard;
-                    $attr->singlecard_id = $id;
-                    $attr->attribute_id = $check;
-                    $attr->save();
+                $id = $card->id;
+
+                $checkboxes = Input::get('attributes');
+
+                if(is_array($checkboxes))
+                {
+                    foreach($checkboxes as $check) {
+
+                        $attr = new AttributeCard;
+                        $attr->singlecard_id = $id;
+                        $attr->attribute_id = $check;
+                        $attr->save();
+
+                    }
 
                 }
-                // do stuff with checked friends
+
+                if (Input::get('deck_id') != '') {
+
+                    $set = new DeckCard;
+                    $set->singlecard_id = $id;
+                    $set->deck_id = Input::get('deck_id');
+                    $set->save();
+
+                }
+
+                $x = $x + 1;
             }
 
-        if (Input::get('deck_id') != '') {
 
-            $set = new DeckCard;
-            $set->singlecard_id = $id;
-            $set->deck_id = Input::get('deck_id');
-            $set->save();
+
+        if (Input::get('deck_id') != '') {
 
             $userid = Auth::user()->id;
 

@@ -19,7 +19,24 @@ class UsersController extends BaseController {
 
         $data = array();
 
-        $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
+        if (isset(Auth::user()->id)) {
+
+            $data['authorized'] = true;
+
+            $cards[] = DB::table('singlecards')
+                ->where('singlecards.user_id', Auth::user()->id)
+                ->leftJoin('cards', 'singlecards.card_id', '=', 'cards.card_id')
+                ->leftJoin('attribute_singlecard', 'attribute_singlecard.singlecard_id', '=', 'singlecards.id')
+                ->get();
+
+            $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
+            $data['cards'] = $cards;
+
+        } else {
+
+            $data['authorized'] = false;
+
+        }
 
         $this->layout->with('data', $data);
 

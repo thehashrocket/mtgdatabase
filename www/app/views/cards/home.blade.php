@@ -7,12 +7,33 @@
 @section('content')
 
 @if( ! empty( $card_data ) )
-<div class="row"><div class="columns large-9"></div><div class="columns large-3"><a href="#" class="button tiny close">Close</a> </div> </div>
 <div class="row">
-    <div class="columns large-4">
+
+        @if( Auth::check() )
+        <div class="columns large-9">
+
+        </div>
+        <div class="columns large-3">
+            <a href="#" class="button tiny close">Close</a>
+        </div>
+        @else
+        <div class="columns large-11">
+
+        </div>
+        <div class="columns large-1">
+            <a class="close-reveal-modal button tiny">Close</a>
+        </div>
+        @endif
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="columns large-3 large-offset-1">
         <div id="card_image" class="clearfix"><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{ $card_data->card_id }}&type=card" /></div>
     </div>
-    <div class="columns large-8">
+    <div class="columns large-7">
         <div id="card_data_wrapper" class="clearfix">
 
             <div class="row">
@@ -110,6 +131,7 @@
 
         </div>
     </div>
+    <div class="columns large-1"><p></p></div>
 </div>
 
 
@@ -120,7 +142,7 @@
 @if( Auth::check() )
 
 <div class="row">
-    <div class="columns large=12">
+    <div class="columns large-10 large-offset-1">
         {{ Form::open( array( 'url' => '/single/create','class'=>'form-addcard' ) ) }}
         {{ Form::hidden( 'card_id', $card_data->card_id ) }}
 
@@ -157,14 +179,14 @@
                 <div class="large-3 columns">
                     <p>Attributes:</p>
                 </div>
-                <div class="large-3 columns">
+                <div class="large-4 columns">
 
                         @foreach ($attributes as $check)
                         <input name="attributes[]" value="{{ $check->id }}" type="checkbox"><label for="attributes">{{ $check->alias }}</label><br/>
                         @endforeach
 
                 </div>
-                <div class="large-6 columns">
+                <div class="large-5 columns">
 
                 </div>
             </div>
@@ -195,9 +217,8 @@
         </div>
         {{ Form::close() }}
     </div>
+    <div class="columns large-1"><p></p></div>
 </div>
-
-
 
 @endif
 

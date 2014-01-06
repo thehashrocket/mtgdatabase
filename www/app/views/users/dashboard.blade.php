@@ -17,6 +17,24 @@
     </div>
 </div>
 <div class="row">
+    <div class="large-12 columns">
+        <p>Add Cards to Deck</p>
+        {{ Form::text( 'search', '', array( 'id' => 'search', 'class' => 'search-query span2', 'placeholder' => 'Search Database' ) ) }}
+    </div>
+</div>
+<div class="row">
+    <div class="large-12 columns">
+        <?php if ($authorized == true) {
+            ?>
+            <div id="addCard" class="">
+
+            </div>
+        <?php } ?>
+        <div id="results"></div>
+    </div>
+</div>
+
+<div class="row">
     <div class="large-4 columns">
         <h3>Your Decks</h3>
 
@@ -38,8 +56,45 @@
         </div>
     </div>
     <div class="large-8 columns">
-        <h3>Your Cards</h3>
+        <div class="row">
+            <div class="large-12 columns">
+                <h3>Your Cards</h3>
+            </div>
+        </div>
+        <div id="cardsList" class="ul1">
+            <?php if (isset($cards) && $cards != 0) { ?>
+                @foreach ($cards as $card)
+
+                @foreach ($card as $single)
+
+                <div class="row singlecard"><a class="" href="{{ $single->id }}">
+                        <div class="large-2 columns">
+                            <img src="{{ $single->card_image }}">
+                        </div>
+
+                        <div class="large-10 columns">
+
+                            <div class="row">
+                                <div class="large-12 columns"><p>{{ $single->name }}</p></div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </div>
+
+                @endforeach
+
+                @endforeach
+
+            <?php } ?>
+        </div>
     </div>
+
 </div>
 
 @stop
