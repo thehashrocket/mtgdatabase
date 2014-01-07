@@ -23,23 +23,19 @@ class UsersController extends BaseController {
 
             $data['authorized'] = true;
 
-            $cards[] = DB::table('singlecards')
-                ->where('singlecards.user_id', Auth::user()->id)
-                ->leftJoin('cards', 'singlecards.card_id', '=', 'cards.card_id')
-                ->leftJoin('attribute_singlecard', 'attribute_singlecard.singlecard_id', '=', 'singlecards.id')
-                ->get();
+            $my = User::find(Auth::user()->id);
 
-            foreach ($cards as $temp) {
-
-                foreach($temp as $tempCard) {
-
-                    $single = Singlecard::find($tempCard->id);
+            $cards = $my->cards;
 
 
-                    echo $single->attributes->id;
-                }
 
-            }
+//            $cards[] = DB::table('singlecards')
+//                ->where('singlecards.user_id', '=', Auth::user()->id)
+//                ->join('cards', 'singlecards.card_id', '=', 'cards.card_id')
+//                ->join('attribute_singlecard', 'attribute_singlecard.singlecard_id', '=', 'singlecards.id')
+//                ->get();
+
+
 
 //            $data['attributes'] = $attributes;
 

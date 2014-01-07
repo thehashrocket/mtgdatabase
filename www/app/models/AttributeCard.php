@@ -21,6 +21,10 @@ class AttributeCard extends Eloquent {
 
     );
 
+    public function card() {
+        return $this->belongsTo('Singlecard');
+    }
+
 
 
 }

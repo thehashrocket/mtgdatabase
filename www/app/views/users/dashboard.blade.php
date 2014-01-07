@@ -62,6 +62,7 @@
             </div>
         </div>
         <div id="cardsList" class="ul1">
+            <?php var_dump($cards); exit; ?>
             <?php if (isset($cards) && $cards != 0) { ?>
                 @foreach ($cards as $card)
 
@@ -81,6 +82,8 @@
                                 <div class="large-12 columns">
 
                                     <?php
+
+                                    var_dump($single);
 
 //                                        foreach ($attributes as $attribute) {
 //

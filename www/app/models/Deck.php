@@ -22,7 +22,7 @@ class Deck extends Eloquent {
 
     public function cards()
     {
-        return $this->belongsToMany('Singlecard');
+        return $this->hasMany('Singlecard');
     }
 
 }

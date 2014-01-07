@@ -32,6 +32,10 @@ class Singlecard extends Eloquent {
         return $this->hasMany('AttributeCard', 'singlecard_id');
     }
 
+    public function user() {
+        return $this->belongsTo('User');
+    }
+
 
 
     /**
