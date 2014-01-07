@@ -80,6 +80,25 @@
                             <div class="row">
                                 <div class="large-12 columns">
 
+                                    <?php
+
+//                                        foreach ($attributes as $attribute) {
+//
+//                                            foreach($attribute as $attr) {
+//
+//                                                if (isset($attr->id)) {
+//
+//                                                    if (isset($single->attribute_id)) {
+//                                                        echo $single->id;
+//                                                        if ($single->id == $single->attribute_id) {
+//                                                            echo $attr->alias;
+//                                                        }
+//                                                    }
+//                                                }
+//                                            }
+//                                        }
+                                    ?>
+
                                 </div>
                             </div>
 

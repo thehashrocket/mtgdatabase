@@ -24,8 +24,6 @@ class DecksController extends BaseController {
             /* Get deck info */
             $reqdeck =  Deck::find($deck);
 
-
-
             /* is the visitor logged in? */
             if (isset(Auth::user()->id)) {
 

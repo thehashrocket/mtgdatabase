@@ -23,8 +23,20 @@ class Singlecard extends Eloquent {
         'condition_id' =>'required|min:1'
     );
 
+    /**
+     * @return
+     */
+
+    public function attributes()
+    {
+        return $this->hasMany('AttributeCard', 'singlecard_id');
+    }
 
 
+
+    /**
+     * @return
+     */
 
     public function decks()
     {

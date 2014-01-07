@@ -29,13 +29,19 @@ class UsersController extends BaseController {
                 ->leftJoin('attribute_singlecard', 'attribute_singlecard.singlecard_id', '=', 'singlecards.id')
                 ->get();
 
-            foreach ($cards as $tempCard) {
-                $attributes[] = DB::table('attributes')
-                    ->where('id', '=', '$tempCard->attribute_id')
-                    ->get();
+            foreach ($cards as $temp) {
 
-                $cards = array_add( $cards, 'attributes', $attributes);
+                foreach($temp as $tempCard) {
+
+                    $single = Singlecard::find($tempCard->id);
+
+
+                    echo $single->attributes->id;
+                }
+
             }
+
+//            $data['attributes'] = $attributes;
 
             $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
             $data['cards'] = $cards;

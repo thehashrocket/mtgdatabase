@@ -61,8 +61,6 @@ class SingleController extends BaseController {
                 $x = $x + 1;
             }
 
-
-
         if (Input::get('deck_id') != '') {
 
             $userid = Auth::user()->id;
