@@ -23,24 +23,21 @@ class UsersController extends BaseController {
 
             $data['authorized'] = true;
 
-            $my = User::find(Auth::user()->id);
+            $cards = Singlecard::where('user_id', '=', Auth::user()->id)->get();
 
-            $cards = $my->cards;
+            foreach ($cards as $card) {
 
+                $cards_array[] = $card;
 
-
-//            $cards[] = DB::table('singlecards')
-//                ->where('singlecards.user_id', '=', Auth::user()->id)
-//                ->join('cards', 'singlecards.card_id', '=', 'cards.card_id')
-//                ->join('attribute_singlecard', 'attribute_singlecard.singlecard_id', '=', 'singlecards.id')
-//                ->get();
-
-
+//                echo 'card' . $card;
+//                echo 'ifno', $card->info;
+//                echo 'attribute' . $card->attributes;
+            }
 
 //            $data['attributes'] = $attributes;
 
             $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
-            $data['cards'] = $cards;
+            $data['cards'] = $cards_array;
 
         } else {
 

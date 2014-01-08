@@ -62,45 +62,23 @@
             </div>
         </div>
         <div id="cardsList" class="ul1">
-            <?php var_dump($cards); exit; ?>
             <?php if (isset($cards) && $cards != 0) { ?>
-                @foreach ($cards as $card)
+                @foreach ($cards as $single)
 
-                @foreach ($card as $single)
+
 
                 <div class="row singlecard"><a class="" href="{{ $single->id }}">
                         <div class="large-2 columns">
-                            <img src="{{ $single->card_image }}">
+                            <img src="{{ $single->info->card_image }}">
                         </div>
 
                         <div class="large-10 columns">
 
                             <div class="row">
-                                <div class="large-12 columns"><p>{{ $single->name }}</p></div>
+                                <div class="large-12 columns"><p>{{ $single->info->name }}</p></div>
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
-
-                                    <?php
-
-                                    var_dump($single);
-
-//                                        foreach ($attributes as $attribute) {
-//
-//                                            foreach($attribute as $attr) {
-//
-//                                                if (isset($attr->id)) {
-//
-//                                                    if (isset($single->attribute_id)) {
-//                                                        echo $single->id;
-//                                                        if ($single->id == $single->attribute_id) {
-//                                                            echo $attr->alias;
-//                                                        }
-//                                                    }
-//                                                }
-//                                            }
-//                                        }
-                                    ?>
 
                                 </div>
                             </div>
@@ -109,7 +87,7 @@
                     </a>
                 </div>
 
-                @endforeach
+
 
                 @endforeach
 
