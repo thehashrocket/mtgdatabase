@@ -29,12 +29,12 @@ class UsersController extends BaseController {
 
                 $cards_array[] = $card;
 
+//                echo $card->attributes;
 //                echo 'card' . $card;
 //                echo 'ifno', $card->info;
 //                echo 'attribute' . $card->attributes;
             }
 
-//            $data['attributes'] = $attributes;
 
             $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
             $data['cards'] = $cards_array;

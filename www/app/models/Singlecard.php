@@ -29,7 +29,7 @@ class Singlecard extends Eloquent {
 
     public function attributes()
     {
-        return $this->belongsToMany('Attribute', 'attribute_singlecard','singlecard_id', 'attribute_id')->withPivot('alias');
+        return $this->belongsToMany('Attribute', 'attribute_singlecard','singlecard_id', 'attribute_id');
     }
 
     public function info()
