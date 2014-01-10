@@ -81,33 +81,30 @@
 
             <div id="cardsList" class="ul1">
                 <?php if (isset($cards) && $cards != 0) { ?>
-                    @foreach ($cards as $card)
 
-                    @foreach ($card as $single)
+                    @foreach ($cards as $single)
 
-                    <div class="row singlecard">
-                        <a class="" href="{{ $single->id }}">
+                    <div class="row singlecard"><a class="" href="{{ $single->id }}">
                             <div class="large-2 columns">
-                                <img src="{{ $single->card_image }}">
+                                <img src="{{ $single->info->card_image }}">
                             </div>
 
                             <div class="large-10 columns">
+
                                 <div class="row">
-                                    <div class="large-12 columns">
-                                        <p>{{ $single->name }}</p>
-                                    </div>
+                                    <div class="large-12 columns"><p>{{ $single->info->name }}</p></div>
                                 </div>
                                 <div class="row">
                                     <div class="large-12 columns">
-
+                                        @foreach ($single->attributes as $attribute)
+                                        <p>{{ $attribute->alias }}</p>
+                                        @endforeach
                                     </div>
                                 </div>
 
                             </div>
                         </a>
                     </div>
-
-                    @endforeach
 
                     @endforeach
 
@@ -123,27 +120,30 @@
         </div>
         <div id="cardsList" class="ul2">
             <?php if (isset($cards) && $cards != 0) { ?>
-                @foreach ($cards as $card)
 
-                @foreach ($card as $single)
+                @foreach ($cards as $single)
 
                 <div class="row singlecard"><a class="" href="{{ $single->id }}">
                         <div class="large-2 columns">
-                            <img src="{{ $single->card_image }}">
+                            <img src="{{ $single->info->card_image }}">
                         </div>
 
                         <div class="large-10 columns">
+
+                            <div class="row">
+                                <div class="large-12 columns"><p>{{ $single->info->name }}</p></div>
+                            </div>
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <p>{{ $single->name }}</p>
+                                    @foreach ($single->attributes as $attribute)
+                                    <p>{{ $attribute->alias }}</p>
+                                    @endforeach
                                 </div>
                             </div>
 
                         </div>
                     </a>
                 </div>
-
-                @endforeach
 
                 @endforeach
 

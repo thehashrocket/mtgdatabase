@@ -29,15 +29,18 @@ class UsersController extends BaseController {
 
                 $cards_array[] = $card;
 
-//                echo $card->attributes;
-//                echo 'card' . $card;
-//                echo 'ifno', $card->info;
-//                echo 'attribute' . $card->attributes;
+            }
+
+            if (isset($cards) && count($cards) > 0) {
+                $data['cards'] = $cards_array;
+
+            } else {
+                $data['cards'] = 0;
             }
 
 
             $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
-            $data['cards'] = $cards_array;
+
 
         } else {
 

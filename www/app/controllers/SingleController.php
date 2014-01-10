@@ -29,6 +29,7 @@ class SingleController extends BaseController {
                 $card = new Singlecard;
                 $card->card_id = Input::get('card_id');
                 $card->user_id = Auth::user()->id;
+                $card->deck_id = Input::get('deck_id');
                 $card->condition_id = Input::get('condition_id');
                 $card->save();
 

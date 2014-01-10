@@ -38,7 +38,7 @@ class Singlecard extends Eloquent {
 
     public function info()
     {
-        return $this->hasOne('Card', 'card_id');
+        return $this->belongsTo('Card', 'card_id');
     }
 
     /**

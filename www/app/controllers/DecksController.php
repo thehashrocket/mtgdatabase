@@ -55,22 +55,22 @@ class DecksController extends BaseController {
 
         }
 
-        $deck = Deck::find($deck);
+        $cards = Singlecard::where('deck_id', '=', $deck)->get();
 
-        foreach($deck->cards as $card) {
+        foreach ($cards as $card) {
 
-            $cards[] = DB::table('singlecards')
-                ->where('singlecards.id', $card->id)
-                ->leftJoin('cards', 'singlecards.card_id', '=', 'cards.card_id')
-                ->get();
+            $cards_array[] = $card;
+
         }
 
+
         if (isset($cards) && count($cards) > 0) {
-            $data['cards'] = $cards;
+            $data['cards'] = $cards_array;
 
         } else {
             $data['cards'] = 0;
         }
+
 
         $this->layout->with('data', $data);
 

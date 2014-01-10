@@ -144,7 +144,7 @@
 <div class="row">
     <div class="columns large-10 large-offset-1">
         {{ Form::open( array( 'url' => '/single/create','class'=>'form-addcard' ) ) }}
-        {{ Form::hidden( 'card_id', $card_data->card_id ) }}
+        {{ Form::hidden( 'card_id', $card_data->id ) }}
 
         <div id="user_options" class="clearfix">
             <div class="row">

@@ -25,4 +25,9 @@ class Deck extends Eloquent {
         return $this->belongsToMany('Singlecard', 'deck_singlecard','deck_id', 'singlecard_id');
     }
 
+    public function attributes()
+    {
+        return $this->hasManyThrough('Attribute', 'Singlecard', 'singlecard_id', 'attribute_id');
+    }
+
 }
