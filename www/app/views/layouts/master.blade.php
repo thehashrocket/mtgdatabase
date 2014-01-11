@@ -69,6 +69,14 @@
     @endif
 </div>
 
+<div class="row">
+    <div class="large-2 columns hide-for-medium-down">
+        <a href="https://github.com/jshultz/mtgdatabase"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
+    </div>
+    <div class="large-10 columns">
+        <p>Built with the <a href="https://github.com/jshultz/mtgdatabase">MTG Database Open Source Project</a>.</p>
+    </div>
+</div>
 {{ javascript_include_tag($manifestFile = 'application') }}
 </body>
 </html>

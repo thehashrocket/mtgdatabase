@@ -1,3 +1,51 @@
+# MTG Database
+
+MTG Database's goal is to provide a mobile friendly, social, Magic The Gathering card and deck organizer.
+
+The emphasis is on providing a user with
+
+1. A quick, efficient way of organising their cards.
+2. It will perform extremely well on mobile devices.
+3. Social features are a long term goal including
+    a. Rating of decks
+    b. other stuff?
+
+## Immediate Goals:
+
+1. Create setup table to allow for customization for individual websites
+    a. easier for an admin to setup their own copy of the site.
+2. Delete cards.
+3. Delete decks.
+4. Database Seeding
+
+## Long term goals
+1. Improve appearance.
+2. Code cleanup
+
+## Notes
+
+MTG Database is built using the [Laravel 4 w/ Vagrant project](https://github.com/bryannielsen/Laravel4-Vagrant).
+
+## License
+
+MTG Database is licensed under [GNU General Public License v3 (GPL-3)](http://opensource.org/licenses/gpl-3.0.html)
+
+This software is provided 'as-is', without any express or implied
+warranty.  In no event will the authors be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+  1. The origin of this software must not be misrepresented; you must not
+     claim that you wrote the original software. If you use this software
+     in a product, an acknowledgment in the product documentation would be
+     appreciated but is not required.
+  2. Altered source versions must be plainly marked as such, and must not be
+     misrepresented as being the original software.
+  3. This notice may not be removed or altered from any source distribution.
+
 # Laravel 4 w/ Vagrant
 
 A basic Ubuntu 12.04 Vagrant setup with [Laravel4](http://laravel.com/docs) and PHP 5.5.
