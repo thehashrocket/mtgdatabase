@@ -55,9 +55,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'mtgdatab_magicdb',
-			'username'  => 'mtgdatab_magicu',
-			'password'  => 'I,s~g~k=f*Tk',
+			'database'  => 'mtgdatabase',
+			'username'  => 'root',
+			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
