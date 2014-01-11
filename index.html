@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Mtgdatabase : MTG Database&#39;s goal is to provide a mobile friendly, social, Magic The Gathering card and deck organizer." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Mtgdatabase</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/jshultz/mtgdatabase">View on GitHub</a>
+
+          <h1 id="project_title">Mtgdatabase</h1>
+          <h2 id="project_tagline">MTG Database&#39;s goal is to provide a mobile friendly, social, Magic The Gathering card and deck organizer.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/jshultz/mtgdatabase/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/jshultz/mtgdatabase/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="mtg-database" class="anchor" href="#mtg-database"><span class="octicon octicon-link"></span></a>MTG Database</h1>
+
+<p>MTG Database's goal is to provide a mobile friendly, social, Magic The Gathering card and deck organizer.</p>
+
+<p>The emphasis is on providing a user with</p>
+
+<ol>
+<li>A quick, efficient way of organising their cards.</li>
+<li>It will perform extremely well on mobile devices.</li>
+<li>Social features are a long term goal including
+a. Rating of decks
+b. other stuff?</li>
+</ol><h2>
+<a name="immediate-goals" class="anchor" href="#immediate-goals"><span class="octicon octicon-link"></span></a>Immediate Goals:</h2>
+
+<ol>
+<li>Create setup table to allow for customization for individual websites
+a. easier for an admin to setup their own copy of the site.</li>
+<li>Delete cards.</li>
+<li>Delete decks.</li>
+<li>Database Seeding</li>
+</ol><h2>
+<a name="long-term-goals" class="anchor" href="#long-term-goals"><span class="octicon octicon-link"></span></a>Long term goals</h2>
+
+<ol>
+<li>Improve appearance.</li>
+<li>Code cleanup</li>
+</ol><h2>
+<a name="notes" class="anchor" href="#notes"><span class="octicon octicon-link"></span></a>Notes</h2>
+
+<p>MTG Database is built using the <a href="https://github.com/bryannielsen/Laravel4-Vagrant">Laravel 4 w/ Vagrant project</a>.</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>MTG Database is licensed under <a href="http://opensource.org/licenses/gpl-3.0.html">GNU General Public License v3 (GPL-3)</a></p>
+
+<p>This software is provided 'as-is', without any express or implied
+warranty.  In no event will the authors be held liable for any damages
+arising from the use of this software.</p>
+
+<p>Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:</p>
+
+<ol>
+<li>The origin of this software must not be misrepresented; you must not
+ claim that you wrote the original software. If you use this software
+ in a product, an acknowledgment in the product documentation would be
+ appreciated but is not required.</li>
+<li>Altered source versions must be plainly marked as such, and must not be
+ misrepresented as being the original software.</li>
+<li>This notice may not be removed or altered from any source distribution.</li>
+</ol><h1>
+<a name="laravel-4-w-vagrant" class="anchor" href="#laravel-4-w-vagrant"><span class="octicon octicon-link"></span></a>Laravel 4 w/ Vagrant</h1>
+
+<p>A basic Ubuntu 12.04 Vagrant setup with <a href="http://laravel.com/docs">Laravel4</a> and PHP 5.5.
+PHP 5.4 w/ Apache 2.2 is available on the php54 branch.</p>
+
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>VirtualBox - Free virtualization software <a href="https://www.virtualbox.org/wiki/Downloads">Download Virtualbox</a>
+</li>
+<li>Vagrant <strong>1.3+</strong> - Tool for working with virtualbox images <a href="https://www.vagrantup.com">Download Vagrant</a>
+</li>
+<li>Git - Source Control Management <a href="http://git-scm.com/downloads">Download Git</a>
+</li>
+</ul><h2>
+<a name="setup" class="anchor" href="#setup"><span class="octicon octicon-link"></span></a>Setup</h2>
+
+<ul>
+<li>Clone this repository <code>git clone http://github.com/bryannielsen/Laravel4-Vagrant.git</code>
+</li>
+<li>run <code>vagrant up</code> inside the newly created directory</li>
+<li>(the first time you run vagrant it will need to fetch the virtual box image which is ~300mb so depending on your download speed this could take some time)</li>
+<li>Vagrant will then use puppet to provision the base virtual box with our LAMP stack (this could take a few minutes) also note that composer will need to fetch all of the packages defined in the app's composer.json which will add some more time to the first provisioning run</li>
+<li>You can verify that everything was successful by opening http://localhost:8888 in a browser</li>
+</ul><p><em>Note: You may have to change permissions on the www/app/storage folder to 777 under the host OS</em> </p>
+
+<p>For example: <code>chmod -R 777 www/app/storage/</code></p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Some basic information on interacting with the vagrant box</p>
+
+<h3>
+<a name="port-forwards" class="anchor" href="#port-forwards"><span class="octicon octicon-link"></span></a>Port Forwards</h3>
+
+<ul>
+<li>8888 - Apache</li>
+<li>8889 - MySQL </li>
+<li>5433 - PostgreSQL</li>
+</ul><h3>
+<a name="default-mysqlpostgresql-database" class="anchor" href="#default-mysqlpostgresql-database"><span class="octicon octicon-link"></span></a>Default MySQL/PostgreSQL Database</h3>
+
+<ul>
+<li>User: root</li>
+<li>Password: (blank)</li>
+<li>DB Name: database</li>
+</ul><h3>
+<a name="phpmyadmin" class="anchor" href="#phpmyadmin"><span class="octicon octicon-link"></span></a>PHPmyAdmin</h3>
+
+<p>Accessible at http://localhost:8888/phpmyadmin using MySQL access credentials above.</p>
+
+<h3>
+<a name="php-xdebug" class="anchor" href="#php-xdebug"><span class="octicon octicon-link"></span></a>PHP XDebug</h3>
+
+<p>XDebug is included in the build but <strong>disabled by default</strong> because of the effect it can have on performance.  </p>
+
+<p>To enable XDebug:</p>
+
+<ol>
+<li>Set the variable <code>$use_xdebug = "1"</code> at the beginning of <code>puppet/manifests/phpbase.pp</code>
+</li>
+<li>Then you will need to provision the box either with <code>vagrant up</code> or by running the command <code>vagrant provision</code> if the box is already up</li>
+<li>Now you can connect to XDebug on <strong>port 9001</strong>
+</li>
+</ol><p><strong>XDebug Tools</strong></p>
+
+<ul>
+<li>
+<a href="http://www.bluestatic.org/software/macgdbp/">MacGDBP</a> - Free, Mac OSX</li>
+<li>
+<a href="http://www.codebugapp.com/">Codebug</a> - Paid, Mac OSX</li>
+</ul><p><em>Note: All XDebug settings can be configured in the php.ini template at <code>puppet/modules/php/templates/php.ini.erb</code></em></p>
+
+<h3>
+<a name="vagrant" class="anchor" href="#vagrant"><span class="octicon octicon-link"></span></a>Vagrant</h3>
+
+<p>Vagrant is <a href="http://vagrantup.com/v1/docs/index.html">very well documented</a> but here are a few common commands:</p>
+
+<ul>
+<li>
+<code>vagrant up</code> starts the virtual machine and provisions it</li>
+<li>
+<code>vagrant suspend</code> will essentially put the machine to 'sleep' with <code>vagrant resume</code> waking it back up</li>
+<li>
+<code>vagrant halt</code> attempts a graceful shutdown of the machine and will need to be brought back with <code>vagrant up</code>
+</li>
+<li>
+<code>vagrant ssh</code> gives you shell access to the virtual machine</li>
+</ul><hr><h5>
+<a name="virtual-machine-specifications" class="anchor" href="#virtual-machine-specifications"><span class="octicon octicon-link"></span></a>Virtual Machine Specifications</h5>
+
+<ul>
+<li>OS     - Ubuntu 12.04</li>
+<li>Apache - 2.4.6</li>
+<li>PHP    - 5.5.4</li>
+<li>MySQL  - 5.5.32</li>
+<li>PostgreSQL - 9.1</li>
+<li>Beanstalkd - 1.4.6</li>
+<li>Redis - 2.2.12</li>
+<li>Memcached - 1.4.13</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Mtgdatabase maintained by <a href="https://github.com/jshultz">jshultz</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-136438-82");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
