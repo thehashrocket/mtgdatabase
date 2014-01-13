@@ -82,7 +82,7 @@ class SingleController extends BaseController {
 
     public function postUpdate() {
 
-        $validator = Validator::make(Input::all(), Singlecard::$rules);
+        $validator = Validator::make(Input::all(), Singlecard::$inputRules);
 
         if ($validator->passes()) {
 

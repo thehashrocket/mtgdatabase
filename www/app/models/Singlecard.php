@@ -23,6 +23,11 @@ class Singlecard extends Eloquent {
         'condition_id' =>'required|min:1'
     );
 
+    public static $inputRules = array(
+        'card_id'=>'required|min:1',
+        'condition_id' =>'required|min:1'
+    );
+
     /**
      * @return
      */
