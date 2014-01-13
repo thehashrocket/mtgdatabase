@@ -15,6 +15,7 @@ class SingleController extends BaseController {
     protected $layout = 'layouts.master';
 
     public function postCreate() {
+
         $validator = Validator::make(Input::all(), Singlecard::$rules);
 
         if ($validator->passes()) {
@@ -77,6 +78,45 @@ class SingleController extends BaseController {
             // validation has failed, display error messages
             return Redirect::back()->with('message', 'The following errors occurred')->withErrors($validator)->withInput();
         }
+    }
+
+    public function postUpdate() {
+
+        $validator = Validator::make(Input::all(), Singlecard::$rules);
+
+        if ($validator->passes()) {
+
+            $card = Singlecard::find(Input::get('card_id'));
+            $card->deck_id = Input::get('deck_id');
+            $card->condition_id = Input::get('condition_id');
+            $card->save();
+
+            $checkboxes = Input::get('attributes');
+
+            if(is_array($checkboxes))
+            {
+                $attr = AttributeCard::where('singlecard_id', '=', Input::get('card_id'))->delete();
+
+                foreach($checkboxes as $check) {
+
+                    $attr = new AttributeCard;
+                    $attr->singlecard_id = Input::get('card_id');
+                    $attr->attribute_id = $check;
+                    $attr->save();
+
+                }
+
+            }
+
+            return Redirect::back()->with('message', 'Card updated.');
+        }
+
+
+
+        else {
+
+        }
+
     }
 
 }

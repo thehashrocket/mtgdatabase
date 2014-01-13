@@ -62,7 +62,7 @@
 <div class="container">
     @if(Session::has('message'))
         <p class="alert">{{ Session::get('message') }}</p>
-        <?php if(isset($errors)) {
+        <?php if(isset($errors) && $errors != "") {
                 var_dump($errors);
             }
         ?>

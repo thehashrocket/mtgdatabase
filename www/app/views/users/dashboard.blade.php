@@ -65,7 +65,7 @@
             <?php if (isset($cards) && $cards != 0) { ?>
                 @foreach ($cards as $single)
 
-                <div class="row singlecard"><a class="" href="{{ $single->card_id }}">
+                <div class="row singlecard"><a class="" href="{{ $single->id }}">
                         <div class="large-2 columns">
                             <img src="{{ $single->info->card_image }}">
                         </div>

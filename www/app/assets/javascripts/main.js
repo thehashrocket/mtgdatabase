@@ -47,7 +47,9 @@ $(function() {
 //			$( this ).removeClass().addClass();
         }
     });
+
     $('a.close-reveal-modal').trigger('click');
+
     $('#cardsList').on('click','.singlecard a', function(e) {
         e.preventDefault();
         item = $(this).attr('href');
@@ -80,7 +82,6 @@ $(function() {
 
         $('#addCard').css('display','none');
     })
-
 
     $(document).foundation();
 });
