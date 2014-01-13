@@ -5,7 +5,7 @@ $(function() {
         source: function( request, response ){
 
             $.ajax({
-                url: "/search",
+                url: "/search/AjaxSearch",
                 dataType: "jsonp",
                 data: {
                     featureClass: "P",
@@ -30,7 +30,7 @@ $(function() {
 
             $.ajax({
                 type: "GET",
-                url: "/search/" + ui.item.id
+                url: "/search/lookup/" + ui.item.id
             }).done(function(html_form) {
                     $('#addCard').html(html_form);
                     $('#addCard').css('display', 'block');
@@ -58,7 +58,7 @@ $(function() {
 
         $.ajax({
             type: "GET",
-            url: "/search/" + item
+            url: "/search/card/" + item
         }).done(function(html_form) {
 
             if(('#cardsList > #addCard').length > 0) {

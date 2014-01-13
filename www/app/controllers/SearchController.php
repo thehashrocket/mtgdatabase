@@ -8,7 +8,30 @@ class SearchController extends BaseController {
 
     protected $layout = 'layouts.blank';
 
-    public function doSearch( $card_id )
+    public function doLookup( $card_id )
+    {
+
+        $cardQuery = DB::table( 'cards' )->where( 'id', '=', $card_id )->get();
+
+        $cardSetsQuery = DB::table( 'cards' )->where( 'name', '=', $cardQuery[0]->name )->get();
+
+        $data = array();
+        $data['card_data'] = $cardQuery[0];
+        $data['condition'] = Condition::all();
+
+        if (isset(Auth::user()->id)) {
+            $data['decks'] = Deck::where('user_id', '=', Auth::user()->id)->get();
+        } else {
+
+        }
+
+        $data['attributes'] = Attribute::all();
+
+        $this->layout->content = View::make( 'cards.home', $data );
+
+    }
+
+    public function postCard( $card_id )
     {
 
         $card = Singlecard::find($card_id);
@@ -31,7 +54,7 @@ class SearchController extends BaseController {
 
     }
 
-    public function showSearch()
+    public function postAjaxSearch()
     {
 
         $maxRows = Input::get( "maxRows" );

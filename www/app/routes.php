@@ -21,8 +21,10 @@ Route::controller('decks', 'DecksController');
 
 Route::controller('cards', 'CardsController');
 
-Route::get( 'search/{id}', 'SearchController@doSearch' );
+Route::get( 'search/card/{id}', 'SearchController@postCard' );
 
-Route::get( 'search','SearchController@showSearch' );
+Route::get( 'search/AjaxSearch', 'SearchController@postAjaxSearch' );
+
+Route::get( 'search/lookup/{id}','SearchController@doLookup' );
 
 Route::controller('single', 'SingleController');
