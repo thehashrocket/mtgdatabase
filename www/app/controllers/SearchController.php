@@ -11,12 +11,12 @@ class SearchController extends BaseController {
     public function doSearch( $card_id )
     {
 
-        $cardQuery = DB::table( 'cards' )->where( 'id', '=', $card_id )->get();
+        $card = Singlecard::find($card_id);
 
-        $cardSetsQuery = DB::table( 'cards' )->where( 'name', '=', $cardQuery[0]->name )->get();
+//        $cardSetsQuery = DB::table( 'cards' )->where( 'name', '=', $card->name )->get();
 
         $data = array();
-        $data['card_data'] = $cardQuery[0];
+        $data['card_data'] = $card;
         $data['condition'] = Condition::all();
 
         if (isset(Auth::user()->id)) {
@@ -27,7 +27,7 @@ class SearchController extends BaseController {
 
         $data['attributes'] = Attribute::all();
 
-        $this->layout->content = View::make( 'cards.home', $data );
+        $this->layout->content = View::make( 'cards.single', $data );
 
     }
 
