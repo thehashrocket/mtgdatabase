@@ -17,6 +17,7 @@ The emphasis is on providing a user with
 2. Delete cards.
 3. Delete decks.
 4. Database Seeding
+5. ~~Update Cards.~~
 
 ## Long term goals
 1. Improve appearance.
