@@ -21,6 +21,8 @@ Route::controller('decks', 'DecksController');
 
 Route::controller('cards', 'CardsController');
 
+Route::get( 'card/deleteCard/{id}', 'CardsController@postDeleteCard' );
+
 Route::get( 'search/card/{id}', 'SearchController@postCard' );
 
 Route::get( 'search/AjaxSearch', 'SearchController@postAjaxSearch' );

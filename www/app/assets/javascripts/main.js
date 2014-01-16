@@ -32,6 +32,10 @@ $(function() {
                 type: "GET",
                 url: "/search/lookup/" + ui.item.id
             }).done(function(html_form) {
+                    if(('#cardsList > #addCard').length > 0) {
+                        $('#addCard').css('display', 'none');
+                    }
+                    $('#search').after($('#addCard').html(html_form).css('display', 'block'));
                     $('#addCard').html(html_form);
                     $('#addCard').css('display', 'block');
 //                    $('#myModal').show();
@@ -49,6 +53,25 @@ $(function() {
     });
 
     $('a.close-reveal-modal').trigger('click');
+
+    $('#addCard').on('click', 'a.delete', function(e) {
+        e.preventDefault();
+
+        origin = $(this);
+
+        item = $(this).attr('href');
+
+        $.ajax({
+            type: "GET",
+            url: "/card/deleteCard/" + item
+        }).done(function(d){
+
+                $(origin).closest('#addCard').fadeOut();
+
+            })
+
+        $('a[href=' + item + ']').fadeOut();
+    });
 
     $('#cardsList').on('click','.singlecard a', function(e) {
         e.preventDefault();

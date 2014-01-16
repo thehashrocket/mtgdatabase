@@ -207,10 +207,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="large-3 columns">
+                <div class="large-3 small-6 columns">
                     {{ Form::submit( 'Update', array( 'class' => 'button tiny' ) ) }}
                 </div>
-                <div class="large-9 columns"></div>
+                <div class="large-3 small-6 columns"><a href="{{ $card_data->id }}" class="delete button tiny alert">Delete</a> </div>
+                <div class="large-6 hide-for-small columns"></div>
             </div>
 
         </div>

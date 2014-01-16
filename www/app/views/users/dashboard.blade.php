@@ -76,10 +76,12 @@
                                 <div class="large-12 columns"><p>{{ $single->info->name }}</p></div>
                             </div>
                             <div class="row">
-                                <div class="large-12 columns">
-                                    @foreach ($single->attributes as $attribute)
-                                    <p>{{ $attribute->alias }}</p>
-                                    @endforeach
+                                <div class="large-12 columns attributes">
+                                    <p>
+                                        @foreach ($single->attributes as $attribute)
+                                            {{ $attribute->alias }}
+                                        @endforeach
+                                    </p>
                                 </div>
                             </div>
 
