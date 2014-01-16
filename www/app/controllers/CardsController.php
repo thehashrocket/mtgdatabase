@@ -19,6 +19,18 @@ class CardsController extends BaseController {
         exit;
     }
 
+    public function postDeleteCard($card="") {
+        if ($card != "") {
+            $foo = Singlecard::find($card);
+
+            $foo->delete();
+
+            return $foo;
+        } else {
+            return false;
+        }
+    }
+
 
 
 }
