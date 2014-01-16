@@ -1,6 +1,6 @@
 # MTG Database
 
-MTG Database's goal is to provide a mobile friendly, social, Magic The Gathering card and deck organizer.
+MTG Database's goal is to provide a mobile friendly, social, Magic The Gathering card and deck organizer. You can see an active demo by [clicking here](http://mtgdatabase.com).
 
 The emphasis is on providing a user with
 
@@ -17,6 +17,7 @@ The emphasis is on providing a user with
 2. Delete cards.
 3. Delete decks.
 4. Database Seeding
+5. ~~Update Cards.~~
 
 ## Long term goals
 1. Improve appearance.
