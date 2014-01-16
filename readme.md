@@ -14,7 +14,7 @@ The emphasis is on providing a user with
 
 1. Create setup table to allow for customization for individual websites
     a. easier for an admin to setup their own copy of the site.
-2. Delete cards.
+2. ~~Delete cards.~~
 3. Delete decks.
 4. Database Seeding
 5. ~~Update Cards.~~
