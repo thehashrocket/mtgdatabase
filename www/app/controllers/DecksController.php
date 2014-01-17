@@ -96,4 +96,16 @@ class DecksController extends BaseController {
         }
     }
 
+    public function postDeleteDeck($deck="") {
+        if ($deck != "") {
+            $foo = Deck::find($deck);
+
+            $foo->delete();
+
+            return $foo;
+        } else {
+            return false;
+        }
+    }
+
 }

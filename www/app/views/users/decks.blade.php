@@ -20,7 +20,7 @@
 
 <div class="row">
     <?php if ($authorized == true) { ?>
-        <div class="large-4 columns">
+        <div id="decksList" class="large-4 columns">
 
 
             <?php if (isset($decks) && count($decks) >= 1) { ?>
@@ -29,8 +29,9 @@
 
                 <?php foreach ($decks as $deck) { ?>
                     <div class="row">
-                        <div class="large-12 columns">
-                            <p><a href="/decks/<?php echo $deck->id; ?>"><?php echo $deck->name; ?></a> </p>
+                        <div class="large-4 columns"><a href="<?php echo $deck->id; ?>" class="deckDelete <?php echo $deck->id; ?> button alert tiny">Delete</a> </div>
+                        <div class="large-8 columns">
+                            <p><a class="deck" data-deck="<?php echo $deck->id; ?>" href="/decks/<?php echo $deck->id; ?>"><?php echo $deck->name; ?></a> </p>
                         </div>
                     </div>
                 <?php } ?>
@@ -41,7 +42,7 @@
                     <h6>Create A Deck</h6>
                     {{ Form::open(array('url' => 'decks/create', 'class' => 'form-createdeck')) }}
                     {{ Form::text('deckName', null, array('class'=>'input-block-level', 'placeholder'=>'My Awesome Deck')) }}
-                    {{ Form::submit('Register', array('class'=>'btn btn-large btn-primary btn-block'))}}
+                    {{ Form::submit('Create', array('class'=>'btn btn-large btn-primary btn-block'))}}
                     {{ Form::close() }}
                 </div>
             </div>

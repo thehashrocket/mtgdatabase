@@ -16,3 +16,7 @@
 #cardsList .attributes p {
     font-size: 0.6875rem;
 }
+
+#decksList a.deckDelete {
+    display: none;
+}

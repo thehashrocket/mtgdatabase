@@ -15,13 +15,17 @@ Route::get('/', 'HomeController@getIndex');
 
 Route::controller('users', 'UsersController');
 
+
+
 Route::get( 'decks/{deck?}', 'DecksController@getDecks' );
+
+Route::get( 'decks/deleteDeck/{deck?}', 'DecksController@postDeleteDeck' );
 
 Route::controller('decks', 'DecksController');
 
-Route::controller('cards', 'CardsController');
-
 Route::get( 'card/deleteCard/{id}', 'CardsController@postDeleteCard' );
+
+Route::controller('cards', 'CardsController');
 
 Route::get( 'search/card/{id}', 'SearchController@postCard' );
 
