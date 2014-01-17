@@ -35,15 +35,16 @@
 </div>
 
 <div class="row">
-    <div class="large-4 columns">
+    <div id="decksList" class="large-4 columns">
         <h3>Your Decks</h3>
 
         <?php if (isset($decks)) { ?>
 
             <?php foreach ($decks as $deck) { ?>
                 <div class="row">
-                    <div class="large-12 columns">
-                        <p><a href="/decks/<?php echo $deck->id; ?>"><?php echo $deck->name; ?></a> </p>
+                    <div class="large-4 columns"><a href="<?php echo $deck->id; ?>" class="deckDelete <?php echo $deck->id; ?> button alert tiny">Delete</a> </div>
+                    <div class="large-8 columns">
+                        <p><a class="deck" data-deck="<?php echo $deck->id; ?>" href="/decks/<?php echo $deck->id; ?>"><?php echo $deck->name; ?></a> </p>
                     </div>
                 </div>
             <?php } ?>
@@ -51,7 +52,11 @@
         <?php } ?>
         <div class="row">
             <div class="large-12 columns">
-                <a href="/users/decks">Manage Decks</a>
+                <h6>Create A Deck</h6>
+                {{ Form::open(array('url' => 'decks/create', 'class' => 'form-createdeck')) }}
+                {{ Form::text('deckName', null, array('class'=>'input-block-level', 'placeholder'=>'My Awesome Deck')) }}
+                {{ Form::submit('Create', array('class'=>'btn btn-large btn-primary btn-block'))}}
+                {{ Form::close() }}
             </div>
         </div>
     </div>
