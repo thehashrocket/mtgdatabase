@@ -5,7 +5,7 @@
 {{ javascript_include_tag($manifestFile = 'head') }}
 <body>
 <div class="row">
-    <div class="large-12 columns">
+    <div class="small-12 columns">
         <h1>Welcome to the MTG Database</h1>
         <h3>Your One Stop Shop for organising and researching your Magic: The Gathering cards.</h3>
     </div>
@@ -48,18 +48,18 @@
     </div>
 
 <div class="row">
-    <div class="large-3 columns hide-for-medium-down">
+    <div class="medium-3 columns hide-for-small-only">
         @section('sidebar')
 
         @include('widgets.sidebar_cards')
         @show
     </div>
-    <div class="large-9 columns">
+    <div class="medium-9 columns">
         @yield('content')
     </div>
 </div>
 
-<div class="container">
+<div class="container hide-for-medium-down">
     @if(Session::has('message'))
         <p class="alert">{{ Session::get('message') }}</p>
         <?php if(isset($errors) && count($errors) >= 1) {
