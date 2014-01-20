@@ -3,6 +3,7 @@
 <html>
 {{ stylesheet_link_tag() }}
 {{ javascript_include_tag($manifestFile = 'head') }}
+<meta name="viewport" content="initial-scale=1.0">
 <body>
 
 <div class="off-canvas-wrap">
