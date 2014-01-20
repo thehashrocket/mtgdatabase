@@ -15,7 +15,9 @@
 //= require jquery
 
 //= require foundation
-//= require foundation.topbar
+//= require foundation.dropdown
+//= require foundation.offcanvas
 //= require foundation.reveal
+//= require foundation.topbar
 //= require jquery-ui
 //= require main
