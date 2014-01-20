@@ -80,12 +80,12 @@
                 @include('widgets.sidebar_cards')
                 @show
             </div>
-            <div class="medium-9 columns">
+            <div class="small-12 medium-9 columns">
                 @yield('content')
             </div>
         </div>
 
-        <div class="container hide-for-medium-down">
+        <div class="small-12 columns container hide-for-medium-down">
             @if(Session::has('message'))
             <p class="alert">{{ Session::get('message') }}</p>
             <?php if(isset($errors) && count($errors) >= 1) {
@@ -99,7 +99,7 @@
             <div class="large-2 columns hide-for-medium-down">
                 <a href="http://jshultz.github.io/mtgdatabase/"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
             </div>
-            <div class="large-10 columns">
+            <div class="small-12 large-10 columns">
                 <p>Built with the <a href="http://jshultz.github.io/mtgdatabase/">MTG Database Open Source Project</a>.</p>
             </div>
         </div>
