@@ -10,20 +10,20 @@
 @section('content')
 
 <div class="row">
-    <div class="large-12 columns">
+    <div class="small-12 columns">
         <h1>Dashboard</h1>
 
         <p>Welcome to your Dashboard. You rock!</p>
     </div>
 </div>
 <div class="row">
-    <div class="large-12 columns">
+    <div class="small-12 columns">
         <p>Add Cards to Deck</p>
         {{ Form::text( 'search', '', array( 'id' => 'search', 'class' => 'search-query span2', 'placeholder' => 'Search Database' ) ) }}
     </div>
 </div>
 <div class="row">
-    <div class="large-12 columns">
+    <div class="small-12 columns">
         <?php if ($authorized == true) {
             ?>
             <div id="addCard" class="">
@@ -35,7 +35,7 @@
 </div>
 
 <div class="row">
-    <div id="decksList" class="large-4 columns">
+    <div id="decksList" class="small-4 columns">
         <h3>Your Decks</h3>
 
         <?php if (isset($decks)) { ?>
@@ -51,7 +51,7 @@
 
         <?php } ?>
         <div class="row">
-            <div class="large-12 columns">
+            <div class="small-12 columns">
                 <h6>Create A Deck</h6>
                 {{ Form::open(array('url' => 'decks/create', 'class' => 'form-createdeck')) }}
                 {{ Form::text('deckName', null, array('class'=>'input-block-level', 'placeholder'=>'My Awesome Deck')) }}
@@ -60,9 +60,9 @@
             </div>
         </div>
     </div>
-    <div class="large-8 columns">
+    <div class="small-8 columns">
         <div class="row">
-            <div class="large-12 columns">
+            <div class="small-12 columns">
                 <h3>Your Cards</h3>
             </div>
         </div>
@@ -75,13 +75,13 @@
                             <img src="{{ $single->info->card_image }}">
                         </div>
 
-                        <div class="large-10 columns">
+                        <div class="small-10 columns">
 
                             <div class="row">
-                                <div class="large-12 columns"><p>{{ $single->info->name }}</p></div>
+                                <div class="small-12 columns"><p>{{ $single->info->name }}</p></div>
                             </div>
                             <div class="row">
-                                <div class="large-12 columns attributes">
+                                <div class="small-12 columns attributes">
                                     <p>
                                         @foreach ($single->attributes as $attribute)
                                             {{ $attribute->alias }}

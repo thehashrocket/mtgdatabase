@@ -10,7 +10,7 @@
 @section('content')
 
 <div class="row">
-    <div class="large-12">
+    <div class="small-12">
         {{ Form::open(array('url'=>'users/create', 'class'=>'form-signup')) }}
         <h2 class="form-signup-heading">Please Register</h2>
 

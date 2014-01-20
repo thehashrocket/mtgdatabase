@@ -10,7 +10,7 @@
 @section('content')
 
 <div class="row">
-    <div class="large-12">
+    <div class="small-12">
         {{ Form::open(array('url'=>'users/signin', 'class'=>'form-signin')) }}
         <h2 class="form-signin-heading">Please Login</h2>
 
