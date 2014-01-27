@@ -35,7 +35,7 @@
 </div>
 
 <div class="row">
-    <div id="decksList" class="small-4 columns">
+    <div id="decksList" class="small-12 medium-4 columns">
         <h3>Your Decks</h3>
 
         <?php if (isset($decks)) { ?>
@@ -60,7 +60,7 @@
             </div>
         </div>
     </div>
-    <div class="small-8 columns">
+    <div class="small-12 medium-8 columns">
         <div class="row">
             <div class="small-12 columns">
                 <h3>Your Cards</h3>

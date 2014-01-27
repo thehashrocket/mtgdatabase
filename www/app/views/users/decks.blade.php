@@ -20,7 +20,7 @@
 
 <div class="row">
     <?php if ($authorized == true) { ?>
-        <div id="decksList" class="large-4 columns">
+        <div id="decksList" class="small-12 medium-4 columns">
 
 
             <?php if (isset($decks) && count($decks) >= 1) { ?>
@@ -50,7 +50,7 @@
     <?php } ?>
     <?php if ($authorized == true) { ?>
 
-        <div class="large-8 columns">
+        <div class="small-12 medium-8 columns">
 
            <div class="row">
                <div class="small-12 column">
