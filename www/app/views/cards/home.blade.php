@@ -10,17 +10,17 @@
 <div class="row">
 
         @if( Auth::check() )
-        <div class="columns small-9">
+        <div class="columns small-8">
 
         </div>
-        <div class="columns small-3">
+        <div class="columns small-4">
             <a href="#" class="button tiny close">Close</a>
         </div>
         @else
-        <div class="columns small-11">
+        <div class="columns small-8">
 
         </div>
-        <div class="columns small-1">
+        <div class="columns small-4">
             <a class="close-reveal-modal button tiny">Close</a>
         </div>
         @endif
@@ -30,10 +30,10 @@
 
 
 <div class="row">
-    <div class="columns small-3 small-offset-1">
+    <div class="columns medium-3 medium-offset-1 hide-for-small-only">
         <div id="card_image" class="clearfix"><img src="http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid={{ $card_data->card_id }}&type=card" /></div>
     </div>
-    <div class="columns small-7">
+    <div class="columns small-10 small-offset-1 medium-7">
         <div id="card_data_wrapper" class="clearfix">
 
             <div class="row">
@@ -148,22 +148,22 @@
 
         <div id="user_options" class="clearfix">
             <div class="row">
-                <div class="small-3 columns">
+                <div class="small-6 medium-3 columns">
                     <p>How many:</p>
                 </div>
-                <div class="small-3 columns">
+                <div class="small-6 medium-3 columns">
                     <p>{{ Form::text( 'num_cards', '1', array( 'class' => 'numberbox' ) ) }}
                     </p>
                 </div>
-                <div class="small-6 columns">
+                <div class="medium-6 hide-for-small-only columns">
 
                 </div>
             </div>
             <div class="row">
-                <div class="small-3 columns">
+                <div class="small-6 medium-3 columns">
                     <p>Condition:</p>
                 </div>
-                <div class="small-3 columns">
+                <div class="small-6 medium-3 columns">
 
                     <select name="condition_id">
                         @foreach ($condition as $con)
@@ -171,30 +171,30 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="small-6 columns">
+                <div class="medium-6 hide-for-small-only columns">
 
                 </div>
             </div>
             <div class="row">
-                <div class="small-3 columns">
+                <div class="small-6 medium-3 columns">
                     <p>Attributes:</p>
                 </div>
-                <div class="small-4 columns">
+                <div class="small-6 medium-4 columns">
 
                         @foreach ($attributes as $check)
                         <input name="attributes[]" value="{{ $check->id }}" type="checkbox"><label for="attributes">{{ $check->alias }}</label><br/>
                         @endforeach
 
                 </div>
-                <div class="small-5 columns">
+                <div class="medium-6 hide-for-small-only columns">
 
                 </div>
             </div>
             <div class="row">
-                <div class="small-3 columns">
+                <div class="small-6 medium-3 columns">
                     <p>Add To Deck:</p>
                 </div>
-                <div class="small-3 columns">
+                <div class="small-6 medium-3 columns">
 
                     <select name="deck_id">
                         <option value="">None</option>
@@ -203,7 +203,7 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="small-6 columns">
+                <div class="medium-6 hide-for-small-only columns">
 
                 </div>
             </div>

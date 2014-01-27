@@ -9,31 +9,31 @@
 @if( ! empty( $card_data ) )
 <div class="row">
 
-        @if( Auth::check() )
-        <div class="columns small-9">
+    @if( Auth::check() )
+    <div class="columns small-8">
 
-        </div>
-        <div class="columns small-3">
-            <a href="#" class="button tiny close">Close</a>
-        </div>
-        @else
-        <div class="columns small-11">
-
-        </div>
-        <div class="columns small-1">
-            <a class="close-reveal-modal button tiny">Close</a>
-        </div>
-        @endif
     </div>
+    <div class="columns small-4">
+        <a href="#" class="button tiny close">Close</a>
+    </div>
+    @else
+    <div class="columns small-8">
+
+    </div>
+    <div class="columns small-4">
+        <a class="close-reveal-modal button tiny">Close</a>
+    </div>
+    @endif
+</div>
 </div>
 
 
 
 <div class="row">
-    <div class="columns small-3 small-offset-1">
+    <div class="columns medium-3 medium-offset-1 hide-for-small-only">
         <div id="card_image" class="clearfix"><img src="{{ $card_data->info->card_image }}" /></div>
     </div>
-    <div class="columns small-7">
+    <div class="columns small-10 small-offset-1 medium-7">
         <div id="card_data_wrapper" class="clearfix">
 
             <div class="row">
@@ -149,10 +149,10 @@
         <div id="user_options" class="clearfix">
 
             <div class="row">
-                <div class="small-3 columns">
+                <div class="small-6 medium-3 columns">
                     <p>Condition:</p>
                 </div>
-                <div class="small-3 columns">
+                <div class="small-6 medium-3 columns">
 
                     <select name="condition_id">
                         @foreach ($condition as $con)
@@ -161,15 +161,15 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="small-6 columns">
+                <div class="medium-6 hide-for-small-only columns">
 
                 </div>
             </div>
             <div class="row">
-                <div class="small-3 columns">
+                <div class="small-6 medium-3 columns">
                     <p>Attributes:</p>
                 </div>
-                <div class="small-4 columns">
+                <div class="small-6 medium-3 columns">
                     <?php $checked = ""; ?>
 
                         @foreach ($attributes as $check)
@@ -184,15 +184,15 @@
                         @endforeach
 
                 </div>
-                <div class="small-5 columns">
+                <div class="medium-6 hide-for-small-only columns">
 
                 </div>
             </div>
             <div class="row">
-                <div class="small-3 columns">
+                <div class="small-6 medium-3 columns">
                     <p>Add To Deck:</p>
                 </div>
-                <div class="small-3 columns">
+                <div class="small-6 medium-3 columns">
 
                     <select name="deck_id">
                         <option value="">None</option>
@@ -202,16 +202,16 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="small-6 columns">
+                <div class="medium-6 hide-for-small-only columns">
 
                 </div>
             </div>
             <div class="row">
-                <div class="small-3 small-6 columns">
+                <div class="small-6 medium-3 columns">
                     {{ Form::submit( 'Update', array( 'class' => 'button tiny' ) ) }}
                 </div>
-                <div class="small-3 small-6 columns"><a href="{{ $card_data->id }}" class="delete button tiny alert">Delete</a> </div>
-                <div class="small-6 hide-for-small columns"></div>
+                <div class="small-6 medium-3 columns"><a href="{{ $card_data->id }}" class="delete button tiny alert">Delete</a> </div>
+                <div class="medium-6 hide-for-small-only columns"></div>
             </div>
 
         </div>
