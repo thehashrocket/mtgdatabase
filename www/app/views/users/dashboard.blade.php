@@ -42,8 +42,8 @@
 
             <?php foreach ($decks as $deck) { ?>
                 <div class="row">
-                    <div class="large-4 columns"><a href="<?php echo $deck->id; ?>" class="deckDelete <?php echo $deck->id; ?> button alert tiny">Delete</a> </div>
-                    <div class="large-8 columns">
+                    <div class="small-4 columns"><a href="<?php echo $deck->id; ?>" class="deckDelete <?php echo $deck->id; ?> button alert tiny">Delete</a> </div>
+                    <div class="small-8 columns">
                         <p><a class="deck" data-deck="<?php echo $deck->id; ?>" href="/decks/<?php echo $deck->id; ?>"><?php echo $deck->name; ?></a> </p>
                     </div>
                 </div>
