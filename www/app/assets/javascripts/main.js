@@ -95,8 +95,6 @@ $(function() {
                     $('#addCard').foundation('reveal', 'open');
                 }
 
-
-
             });
     })
 
@@ -106,23 +104,23 @@ $(function() {
         $('#addCard').css('display','none');
     })
 
-    $('a.deck').hover(
-        // mouseover
-        function(){
-            item = $(this).attr('data-deck');
-
-            $('a.deckDelete').fadeOut('fast');
-
-            $('a.deckDelete.' + item ).fadeIn('fast');
-        },
-        // mouseout
-        function(){
-            item = $(this).attr('data-deck');
-            setTimeout( function(){
-                $('a.deckDelete.' + item ).fadeOut('fast')
-            }, 2500 );
-        }
-    );
+//    $('a.deck').hover(
+//        // mouseover
+//        function(){
+//            item = $(this).attr('data-deck');
+//
+//            $('a.deckDelete').fadeOut('fast');
+//
+//            $('a.deckDelete.' + item ).fadeIn('fast');
+//        },
+//        // mouseout
+//        function(){
+//            item = $(this).attr('data-deck');
+//            setTimeout( function(){
+//                $('a.deckDelete.' + item ).fadeOut('fast')
+//            }, 2500 );
+//        }
+//    );
 
     $('#decksList').on('click', 'a.deckDelete', function(e){
 
